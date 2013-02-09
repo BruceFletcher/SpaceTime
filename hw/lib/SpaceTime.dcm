@@ -1,0 +1,46 @@
+EESchema-DOCLIB  Version 2.0  Date: 2013-02-06 11:48:44 PM
+#
+$CMP 74HC595
+D 8 bits serial in // out Shift Register 3 State Out
+K HCMOS SR 3State
+F 74xx/74HC595.pdf
+$ENDCMP
+#
+$CMP 74LS595
+D 8 bits serial in // out Shift Register 3 State Out
+K TTL SR 3State
+$ENDCMP
+#
+$CMP 74LS596
+D 8 bits serial in // out Shift Register Open Collect.
+K HCMOS SR OpenCol
+$ENDCMP
+#
+$CMP L7812ABV
+D 12V fixed regulator
+K 12V regulator
+F http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/DATASHEET/CD00000444.pdf
+$ENDCMP
+#
+$CMP LM1086
+D Linear Regulator
+K POWER REGUL
+F http://www.ti.com/lit/ds/symlink/lm1086.pdf
+$ENDCMP
+#
+$CMP NFD-23011AG-11
+D 2.3" Green 7-segment LED display
+K 7 segment
+$ENDCMP
+#
+$CMP NFD-23011AS-11
+D 2.3" Red 7-segment LED display
+K 7 segment
+$ENDCMP
+#
+$CMP NFD-23011AY-11
+D 2.3" Yellow 7-segment LED display
+K 7 segment
+$ENDCMP
+#
+#End Doc Library
