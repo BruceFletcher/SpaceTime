@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 2013-02-06 11:48:44 PM
+EESchema-DOCLIB  Version 2.0  Date: Monday, 11 February, 2013 12:14:45 am
 #
 $CMP 74HC595
 D 8 bits serial in // out Shift Register 3 State Out
@@ -35,6 +35,11 @@ $ENDCMP
 #
 $CMP NFD-23011AS-11
 D 2.3" Red 7-segment LED display
+K 7 segment
+$ENDCMP
+#
+$CMP NFD-23011Ax-11
+D 2.3" 7-segment LED display
 K 7 segment
 $ENDCMP
 #

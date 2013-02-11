@@ -1,6 +1,6 @@
-update=Sunday, 10 February, 2013 11:06:56 pm
+update=Monday, 11 February, 2013 12:28:58 am
 version=1
-last_client=eeschema
+last_client=kicad
 [cvpcb]
 version=1
 NetITyp=0
@@ -77,8 +77,6 @@ LibName7=display
 LibName8=valves
 LibName9=led
 LibName10=dip_sockets
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=lib;/Applications/Kicad/share/library;/Applications/Kicad/share/modules
@@ -119,3 +117,5 @@ LibName28=opto
 LibName29=atmel
 LibName30=contrib
 LibName31=valves
+[general]
+version=1
