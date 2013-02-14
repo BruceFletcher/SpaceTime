@@ -14,7 +14,7 @@ The clock is AVR based and intended to be hooked up to more network-capable syst
 a serial link for display on http:isvhsopen.com or whatever else.
 
 Hardware design
-~~~~~~~~~~~~~~~
+---------------
 
 The schematics and board layout are done in KiCAD.  The project has one main board with
 the AVR MCU, power, LED drivers and various connectors on it, as well as a board designed
@@ -35,7 +35,7 @@ network-capable host, but that connector choice may have to be reconsidered.  Be
 able to start software development with an FTDI cable attached seems convenient, though.
 
 Software design
-~~~~~~~~~~~~~~~
+---------------
 
 This is going to have to be heavily interrupt-driven, so Arduino code is out.
 
