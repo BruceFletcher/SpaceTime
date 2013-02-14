@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wednesday, 13 February, 2013 08:52:21 pm
+EESchema Schematic File Version 2  date Wednesday, 13 February, 2013 08:58:23 pm
 LIBS:SpaceTime
 LIBS:power
 LIBS:device

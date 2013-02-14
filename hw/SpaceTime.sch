@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Wednesday, 13 February, 2013 08:52:21 pm
+EESchema Schematic File Version 2  date Wednesday, 13 February, 2013 08:58:23 pm
 LIBS:SpaceTime
 LIBS:power
 LIBS:device
@@ -874,7 +874,7 @@ L CONN_8X2 P4
 U 1 1 511D29A5
 P 10050 2700
 F 0 "P4" H 10050 3150 60  0000 C CNN
-F 1 "Open till" V 10050 2700 50  0000 C CNN
+F 1 "Closing time" V 10050 2700 50  0000 C CNN
 	1    10050 2700
 	1    0    0    -1  
 $EndComp
