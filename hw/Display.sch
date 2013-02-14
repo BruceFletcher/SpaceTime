@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Monday, 11 February, 2013 01:00:34 am
+EESchema Schematic File Version 2  date Wednesday, 13 February, 2013 07:56:04 pm
 LIBS:SpaceTime
 LIBS:conn
 LIBS:device
@@ -9,7 +9,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Display board"
-Date "11 feb 2013"
+Date "14 feb 2013"
 Rev "0.1"
 Comp ""
 Comment1 "NFD-23011AS-11 (Red): x=240, y=420"
@@ -413,38 +413,29 @@ Text Label 7575 6300 0    60   ~ 0
 Seg DP
 Text Label 7000 5850 0    60   ~ 0
 CC 4
-$Comp
-L CONN_12 P1
-U 1 1 5118B044
-P 1150 3825
-F 0 "P1" V 1100 3825 60  0000 C CNN
-F 1 "Main board" V 1200 3825 60  0000 C CNN
-	1    1150 3825
-	-1   0    0    -1  
-$EndComp
-Text Label 1500 3275 0    60   ~ 0
+Text Label 1225 3525 2    60   ~ 0
 Seg A
-Text Label 1500 3375 0    60   ~ 0
+Text Label 1225 3625 2    60   ~ 0
 Seg B
-Text Label 1500 3475 0    60   ~ 0
+Text Label 1225 3725 2    60   ~ 0
 Seg C
-Text Label 1500 3575 0    60   ~ 0
+Text Label 1225 3825 2    60   ~ 0
 Seg D
-Text Label 1500 3675 0    60   ~ 0
+Text Label 1225 3925 2    60   ~ 0
 Seg E
-Text Label 1500 3775 0    60   ~ 0
+Text Label 1225 4025 2    60   ~ 0
 Seg F
-Text Label 1500 3875 0    60   ~ 0
+Text Label 2025 3525 0    60   ~ 0
 Seg G
-Text Label 1500 3975 0    60   ~ 0
+Text Label 2025 3625 0    60   ~ 0
 Seg DP
-Text Label 1500 4075 0    60   ~ 0
+Text Label 2025 3725 0    60   ~ 0
 CC 1
-Text Label 1500 4175 0    60   ~ 0
+Text Label 2025 3825 0    60   ~ 0
 CC 2
-Text Label 1500 4275 0    60   ~ 0
+Text Label 2025 3925 0    60   ~ 0
 CC 3
-Text Label 1500 4375 0    60   ~ 0
+Text Label 2025 4025 0    60   ~ 0
 CC 4
 Wire Wire Line
 	4525 800  4700 800 
@@ -682,4 +673,49 @@ Wire Wire Line
 Wire Wire Line
 	6825 5950 6825 5850
 Connection ~ 6825 5850
+$Comp
+L CONN_8X2 P1
+U 1 1 511C60C9
+P 1625 3775
+F 0 "P1" H 1625 4225 60  0000 C CNN
+F 1 "Main board" V 1625 3775 50  0000 C CNN
+	1    1625 3775
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 Extra2
+U 1 1 511C60F2
+P 2175 3425
+F 0 "Extra2" H 2255 3425 40  0000 L CNN
+F 1 "CONN_1" H 2175 3480 30  0001 C CNN
+	1    2175 3425
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 Extra1
+U 1 1 511C6104
+P 1075 3425
+F 0 "Extra1" H 1155 3425 40  0000 L CNN
+F 1 "CONN_1" H 1075 3480 30  0001 C CNN
+	1    1075 3425
+	-1   0    0    1   
+$EndComp
+$Comp
+L CONN_1 Extra3
+U 1 1 511C6134
+P 1075 4125
+F 0 "Extra3" H 1155 4125 40  0000 L CNN
+F 1 "CONN_1" H 1075 4180 30  0001 C CNN
+	1    1075 4125
+	-1   0    0    1   
+$EndComp
+$Comp
+L CONN_1 Extra4
+U 1 1 511C613A
+P 2175 4125
+F 0 "Extra4" H 2255 4125 40  0000 L CNN
+F 1 "CONN_1" H 2175 4180 30  0001 C CNN
+	1    2175 4125
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
