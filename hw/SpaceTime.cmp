@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 2/24/2013 12:05:53 AM
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 2/27/2013 11:08:35 PM
 
 BeginCmp
 TimeStamp = /5115D685;
@@ -85,20 +85,6 @@ IdModule  = LED-3MM;
 EndCmp
 
 BeginCmp
-TimeStamp = /51148A02;
-Reference = IID-4;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /51148A20;
-Reference = IID-5;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
 TimeStamp = /51148A2A;
 Reference = IID-6;
 ValeurCmp = CONN_1;
@@ -136,27 +122,6 @@ EndCmp
 BeginCmp
 TimeStamp = /5114893A;
 Reference = IID-21;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /511489BA;
-Reference = IID-26;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /511489D8;
-Reference = IID-27;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /511489EA;
-Reference = IID-28;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp
@@ -274,34 +239,6 @@ IdModule  = PINTST;
 EndCmp
 
 BeginCmp
-TimeStamp = /5114A5D6;
-Reference = IID-S4;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /5114A5F7;
-Reference = IID-S5;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /5114A604;
-Reference = IID-S6;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /5114A60F;
-Reference = IID-S7;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
 TimeStamp = /5114A61B;
 Reference = IID-S9;
 ValeurCmp = CONN_1;
@@ -404,6 +341,20 @@ TimeStamp = /511D5241;
 Reference = P5;
 ValeurCmp = Cleanup_time;
 IdModule  = pin_array_8x2;
+EndCmp
+
+BeginCmp
+TimeStamp = /512EE0F6;
+Reference = P6;
+ValeurCmp = SPK;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /512F013C;
+Reference = P7;
+ValeurCmp = Keyboard;
+IdModule  = SIL-8;
 EndCmp
 
 BeginCmp
@@ -598,6 +549,20 @@ EndCmp
 BeginCmp
 TimeStamp = /5111F0C6/5121DA4E;
 Reference = Q28;
+ValeurCmp = 2N3904;
+IdModule  = TO92-CBE;
+EndCmp
+
+BeginCmp
+TimeStamp = /512EE00D;
+Reference = Q29;
+ValeurCmp = ZVP2110A;
+IdModule  = TO92DGS;
+EndCmp
+
+BeginCmp
+TimeStamp = /512EE00C;
+Reference = Q30;
 ValeurCmp = 2N3904;
 IdModule  = TO92-CBE;
 EndCmp
@@ -831,6 +796,20 @@ TimeStamp = /5129B02A;
 Reference = R33;
 ValeurCmp = 10k;
 IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /512EE00E;
+Reference = R34;
+ValeurCmp = 40k;
+IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = /512EE010;
+Reference = R35;
+ValeurCmp = 1k;
+IdModule  = R1;
 EndCmp
 
 BeginCmp
