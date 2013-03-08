@@ -1,4 +1,46 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 2/27/2013 11:08:35 PM
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 3/7/2013 10:41:42 PM
+
+BeginCmp
+TimeStamp = /51148A2A;
+Reference = A6;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /51148A34;
+Reference = A11;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /51148A3F;
+Reference = A12;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /51148A49;
+Reference = A13;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /5114899E;
+Reference = A14;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /5114893A;
+Reference = Aref1;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
 
 BeginCmp
 TimeStamp = /5115D685;
@@ -85,211 +127,113 @@ IdModule  = LED-3MM;
 EndCmp
 
 BeginCmp
-TimeStamp = /51148A2A;
-Reference = IID-6;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
+TimeStamp = /51398512;
+Reference = D3;
+ValeurCmp = DIODE;
+IdModule  = D3;
 EndCmp
 
 BeginCmp
-TimeStamp = /51148A34;
-Reference = IID-11;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
+TimeStamp = /5139851B;
+Reference = D4;
+ValeurCmp = DIODE;
+IdModule  = D3;
 EndCmp
 
 BeginCmp
-TimeStamp = /51148A3F;
-Reference = IID-12;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /51148A49;
-Reference = IID-13;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /5114899E;
-Reference = IID-14;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /5114893A;
-Reference = IID-21;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /5121C850;
-Reference = IID-G1;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /511D15D1;
-Reference = IID-J1;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /511D14DB;
-Reference = IID-J2;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /511D0ADD;
-Reference = IID-J3;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
+TimeStamp = /51398531;
+Reference = D5;
+ValeurCmp = DIODE;
+IdModule  = D3;
 EndCmp
 
 BeginCmp
 TimeStamp = /511CD4E5;
-Reference = IID-P1;
+Reference = Extra1;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp
 
 BeginCmp
 TimeStamp = /511CCF2F;
-Reference = IID-P2;
+Reference = Extra2;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp
 
 BeginCmp
 TimeStamp = /511CD85D;
-Reference = IID-P3;
+Reference = Extra3;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp
 
 BeginCmp
 TimeStamp = /511CD467;
-Reference = IID-P4;
+Reference = Extra4;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp
 
 BeginCmp
 TimeStamp = /511D29B7;
-Reference = IID-P5;
+Reference = Extra5;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp
 
 BeginCmp
 TimeStamp = /511D29AB;
-Reference = IID-P6;
+Reference = Extra6;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp
 
 BeginCmp
 TimeStamp = /511D29BD;
-Reference = IID-P7;
+Reference = Extra7;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp
 
 BeginCmp
 TimeStamp = /511D29B1;
-Reference = IID-P8;
+Reference = Extra8;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp
 
 BeginCmp
 TimeStamp = /511D5253;
-Reference = IID-P9;
+Reference = Extra9;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp
 
 BeginCmp
 TimeStamp = /511D5247;
-Reference = IID-P10;
+Reference = Extra10;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp
 
 BeginCmp
 TimeStamp = /511D5259;
-Reference = IID-P11;
+Reference = Extra11;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp
 
 BeginCmp
 TimeStamp = /511D524D;
-Reference = IID-P12;
+Reference = Extra12;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp
 
 BeginCmp
-TimeStamp = /5114A61B;
-Reference = IID-S9;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /5115D97D;
-Reference = IID-SER1;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /5115D979;
-Reference = IID-SER2;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /5115D975;
-Reference = IID-SER3;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /5115D972;
-Reference = IID-SER4;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /5115D96F;
-Reference = IID-SER5;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /5115D953;
-Reference = IID-SER6;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /5121C832;
-Reference = IID-V1;
+TimeStamp = /5121C850;
+Reference = G1;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp
@@ -299,6 +243,55 @@ TimeStamp = /511487A9;
 Reference = J1;
 ValeurCmp = JACK_2P;
 IdModule  = JACK_ALIM;
+EndCmp
+
+BeginCmp
+TimeStamp = /511D15D1;
+Reference = Ja1;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /511D14DB;
+Reference = Ja2;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /511D0ADD;
+Reference = Ja3;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /51396C98;
+Reference = M1;
+ValeurCmp = MOUNTING_HOLE;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /51396CA8;
+Reference = M2;
+ValeurCmp = MOUNTING_HOLE;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /51396CAC;
+Reference = M3;
+ValeurCmp = MOUNTING_HOLE;
+IdModule  = 1pin;
+EndCmp
+
+BeginCmp
+TimeStamp = /51396CAF;
+Reference = M4;
+ValeurCmp = MOUNTING_HOLE;
+IdModule  = 1pin;
 EndCmp
 
 BeginCmp
@@ -813,10 +806,87 @@ IdModule  = R1;
 EndCmp
 
 BeginCmp
+TimeStamp = /51398422;
+Reference = RX1;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /5115D97D;
+Reference = SER1;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /5115D979;
+Reference = SER2;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /5115D975;
+Reference = SER3;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /5115D972;
+Reference = SER4;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /5115D96F;
+Reference = SER5;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /5115D953;
+Reference = SER6;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /5139861F;
+Reference = Skip1;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /5139864A;
+Reference = Skip2;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /5114A61B;
+Reference = Sout-1;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
 TimeStamp = /5114870E;
 Reference = SW1;
 ValeurCmp = Reset;
 IdModule  = SW_PUSH_SMALL;
+EndCmp
+
+BeginCmp
+TimeStamp = /51398437;
+Reference = TX1;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
 EndCmp
 
 BeginCmp
@@ -845,6 +915,13 @@ TimeStamp = /510633E3;
 Reference = U4;
 ValeurCmp = 74HC595;
 IdModule  = DIP-16__300;
+EndCmp
+
+BeginCmp
+TimeStamp = /5121C832;
+Reference = V1;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
 EndCmp
 
 BeginCmp
