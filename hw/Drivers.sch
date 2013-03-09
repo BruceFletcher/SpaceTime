@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 3/7/2013 10:58:33 PM
+EESchema Schematic File Version 2  date 3/8/2013 11:00:44 PM
 LIBS:SpaceTime
 LIBS:power
 LIBS:device
@@ -37,7 +37,7 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "SpaceTime clock"
-Date "8 mar 2013"
+Date "9 mar 2013"
 Rev "0.1"
 Comp ""
 Comment1 "7-seg display drivers: 8 high-side segment MOSFETs, 12 low-side CC NPNs"

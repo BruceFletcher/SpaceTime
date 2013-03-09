@@ -1,22 +1,8 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 3/7/2013 10:41:42 PM
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 3/8/2013 5:16:57 PM
 
 BeginCmp
 TimeStamp = /51148A2A;
 Reference = A6;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /51148A34;
-Reference = A11;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /51148A3F;
-Reference = A12;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp
@@ -31,6 +17,13 @@ EndCmp
 BeginCmp
 TimeStamp = /5114899E;
 Reference = A14;
+ValeurCmp = CONN_1;
+IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /513A8CE9;
+Reference = A23;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
 EndCmp

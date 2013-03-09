@@ -1,717 +1,651 @@
-# EESchema Netlist Version 1.1 created  3/7/2013 10:58:42 PM
+# EESchema Netlist Version 1.1 created  3/8/2013 5:16:57 PM
 (
- ( /5139864A $noname  Skip2 CONN_1 {Lib=CONN_1}
-  (    1 12V )
+ ( /51148A2A PINTST A6 CONN_1
+  ( 1 N-000030 )
  )
- ( /5139861F $noname  Skip1 CONN_1 {Lib=CONN_1}
-  (    1 N-000032 )
+ ( /51148A49 PINTST A13 CONN_1
+  ( 1 N-000029 )
  )
- ( /51398531 $noname  D5 DIODE {Lib=DIODE}
-  (    1 N-000086 )
-  (    2 12V )
+ ( /5114899E PINTST A14 CONN_1
+  ( 1 N-000031 )
  )
- ( /5139851B $noname  D4 DIODE {Lib=DIODE}
-  (    1 N-000087 )
-  (    2 N-000086 )
+ ( /513A8CE9 PINTST A23 CONN_1
+  ( 1 N-000070 )
  )
- ( /51398512 $noname  D3 DIODE {Lib=DIODE}
-  (    1 N-000032 )
-  (    2 N-000087 )
+ ( /5114893A PINTST Aref1 CONN_1
+  ( 1 N-000032 )
  )
- ( /51398437 $noname  TX1 CONN_1 {Lib=CONN_1}
-  (    1 /TX )
+ ( /5115D685 C1 C1 0.1uF
+  ( 1 /5V )
+  ( 2 GND )
  )
- ( /51398422 $noname  RX1 CONN_1 {Lib=CONN_1}
-  (    1 /RX )
+ ( /5115D5BA C1 C2 0.1uF
+  ( 1 /5V )
+  ( 2 GND )
  )
- ( /51396CAF $noname  M4 MOUNTING_HOLE {Lib=MOUNTING_HOLE}
+ ( /5115D881 C1 C3 0.1uF
+  ( 1 N-000032 )
+  ( 2 GND )
  )
- ( /51396CAC $noname  M3 MOUNTING_HOLE {Lib=MOUNTING_HOLE}
+ ( /5115D0FE C1 C4 22pf
+  ( 1 /XL1 )
+  ( 2 GND )
  )
- ( /51396CA8 $noname  M2 MOUNTING_HOLE {Lib=MOUNTING_HOLE}
+ ( /5115D12C C1 C5 22pf
+  ( 1 /XL2 )
+  ( 2 GND )
  )
- ( /51396C98 $noname  M1 MOUNTING_HOLE {Lib=MOUNTING_HOLE}
+ ( /5121B81E C2V8 C6 10uF
+  ( 1 N-000077 )
+  ( 2 GND )
  )
- ( /512F013C $noname  P7 Keyboard {Lib=CONN_8}
-  (    1 /KO-1 )
-  (    2 /KO-2 )
-  (    3 /KO-3 )
-  (    4 /KO-4 )
-  (    5 /KI-1 )
-  (    6 /KI-2 )
-  (    7 /KI-3 )
-  (    8 /KI-4 )
+ ( /5121B86B C2V8 C7 10uF
+  ( 1 /5V )
+  ( 2 GND )
  )
- ( /512EE0F6 $noname  P6 SPK {Lib=CONN_2}
-  (    1 N-000082 )
-  (    2 GND )
+ ( /5118C96A C1 C10 0.1uF
+  ( 1 /5V )
+  ( 2 GND )
  )
- ( /512EE010 $noname  R35 1k {Lib=R}
-  (    1 N-000088 )
-  (    2 /Spk )
+ ( /5118DD23 C1 C11 0.1uF
+  ( 1 /5V )
+  ( 2 GND )
  )
- ( /512EE00E $noname  R34 40k {Lib=R}
-  (    1 12V )
-  (    2 N-000081 )
+ ( /5118E004 C1 C12 0.1uF
+  ( 1 /5V )
+  ( 2 GND )
  )
- ( /512EE00D $noname  Q29 ZVP2110A {Lib=MOSFET_P}
-  (    D N-000082 )
-  (    G N-000081 )
-  (    S 12V )
+ ( /51135D6C D3 D1 DIODESCH
+  ( 1 12V )
+  ( 2 N-000077 )
  )
- ( /512EE00C TO92-EBC  Q30 2N3904 {Lib=BC237}
-  (    B N-000088 )
-  (    C N-000081 )
-  (    E GND )
+ ( /511C7819 LED-3MM D2 Power
+  ( 1 /5V )
+  ( 2 N-000068 )
  )
- ( /5129B02A $noname  R33 10k {Lib=R}
-  (    1 /5V )
-  (    2 /MOSI )
+ ( /51398512 D3 D3 DIODE
+  ( 1 N-000082 )
+  ( 2 N-000085 )
  )
- ( /5129B009 $noname  R32 10k {Lib=R}
-  (    1 /5V )
-  (    2 N-000085 )
- )
- ( /5129AFAC $noname  R31 10k {Lib=R}
-  (    1 /5V )
-  (    2 N-000073 )
- )
- ( /5121C850 $noname  G1 CONN_1 {Lib=CONN_1}
-  (    1 GND )
- )
- ( /5121C832 $noname  V1 CONN_1 {Lib=CONN_1}
-  (    1 N-000032 )
- )
- ( /5121B86B $noname  C7 10uF {Lib=CP1}
-  (    1 /5V )
-  (    2 GND )
- )
- ( /5121B81E $noname  C6 10uF {Lib=CP1}
-  (    1 N-000077 )
-  (    2 GND )
- )
- ( /5115D97D $noname  SER1 CONN_1 {Lib=CONN_1}
-  (    1 GND )
- )
- ( /5115D979 $noname  SER2 CONN_1 {Lib=CONN_1}
-  (    1 /CTS )
- )
- ( /5115D975 $noname  SER3 CONN_1 {Lib=CONN_1}
-  (    1 /5V )
- )
- ( /5115D972 $noname  SER4 CONN_1 {Lib=CONN_1}
-  (    1 /RX )
- )
- ( /5115D96F $noname  SER5 CONN_1 {Lib=CONN_1}
-  (    1 /TX )
- )
- ( /5115D953 $noname  SER6 CONN_1 {Lib=CONN_1}
-  (    1 /RTS )
- )
- ( /5115D901 $noname  P2 Serial {Lib=CONN_6}
-  (    1 GND )
-  (    2 /CTS )
-  (    3 /5V )
-  (    4 /RX )
-  (    5 /TX )
-  (    6 /RTS )
- )
- ( /5115D881 $noname  C3 0.1uF {Lib=CSMALL}
-  (    1 N-000031 )
-  (    2 GND )
- )
- ( /5115D685 $noname  C1 0.1uF {Lib=CSMALL}
-  (    1 /5V )
-  (    2 GND )
- )
- ( /5115D5BA $noname  C2 0.1uF {Lib=CSMALL}
-  (    1 /5V )
-  (    2 GND )
- )
- ( /5115D12C $noname  C5 22pf {Lib=C}
-  (    1 /XL2 )
-  (    2 GND )
- )
- ( /5115D0FE $noname  C4 22pf {Lib=C}
-  (    1 /XL1 )
-  (    2 GND )
- )
- ( /5114A61B $noname  Sout-1 CONN_1 {Lib=CONN_1}
-  (    1 N-000004 )
- )
- ( /51148A49 $noname  A13 CONN_1 {Lib=CONN_1}
-  (    1 N-000026 )
- )
- ( /51148A3F $noname  A12 CONN_1 {Lib=CONN_1}
-  (    1 N-000027 )
- )
- ( /51148A34 $noname  A11 CONN_1 {Lib=CONN_1}
-  (    1 N-000028 )
- )
- ( /51148A2A $noname  A6 CONN_1 {Lib=CONN_1}
-  (    1 N-000029 )
- )
- ( /5114899E $noname  A14 CONN_1 {Lib=CONN_1}
-  (    1 N-000030 )
- )
- ( /5114893A $noname  Aref1 CONN_1 {Lib=CONN_1}
-  (    1 N-000031 )
- )
- ( /511487A9 $noname  J1 JACK_2P {Lib=JACK_2P}
-  (    1 N-000032 )
-  (    2 GND )
-  (    3 N-000069 )
- )
- ( /5114870E $noname  SW1 Reset {Lib=SW_PUSH}
-  (    1 /RST )
-  (    2 GND )
- )
- ( /5114859D $noname  R29 10k {Lib=R}
-  (    1 /RST )
-  (    2 /5V )
- )
- ( /5114809E AVR-ISP-6  P1 AVR-ISP {Lib=AVR-ISP-6}
-  (    1 /MISO )
-  (    2 /5V )
-  (    3 /SCK )
-  (    4 /MOSI )
-  (    5 /RST )
-  (    6 GND )
- )
- ( /51135D6C $noname  D1 DIODESCH {Lib=DIODESCH}
-  (    1 12V )
-  (    2 N-000077 )
- )
- ( /51135C6D $noname  U1 LM1086 {Lib=LM1086}
-  (    1 GND )
-  (    2 /5V )
-  (    3 N-000077 )
- )
- ( /510633E3 $noname  U4 74HC595 {Lib=74HC595}
-  (    1 /KO-2 )
-  (    2 /KO-3 )
-  (    3 /KO-4 )
-  (    4 /Drivers/Lo_Drv_1:4 )
-  (    5 /Drivers/Lo_Drv_1:3 )
-  (    6 /Drivers/Lo_Drv_1:2 )
-  (    7 /Drivers/Lo_Drv_1:1 )
-  (    8 GND )
-  (    9 N-000004 )
-  (   10 /5V )
-  (   11 N-000083 )
-  (   12 N-000016 )
-  (   13 /MOSI )
-  (   14 N-000021 )
-  (   15 /KO-1 )
-  (   16 /5V )
- )
- ( /510633CB $noname  U3 74HC595 {Lib=74HC595}
-  (    1 /Drivers/Lo_Drv_2:3 )
-  (    2 /Drivers/Lo_Drv_2:2 )
-  (    3 /Drivers/Lo_Drv_2:1 )
-  (    4 /Drivers/Lo_Drv_3:4 )
-  (    5 /Drivers/Lo_Drv_3:3 )
-  (    6 /Drivers/Lo_Drv_3:2 )
-  (    7 /Drivers/Lo_Drv_3:1 )
-  (    8 GND )
-  (    9 N-000021 )
-  (   10 /5V )
-  (   11 N-000083 )
-  (   12 N-000016 )
-  (   13 N-000085 )
-  (   14 N-000074 )
-  (   15 /Drivers/Lo_Drv_2:4 )
-  (   16 /5V )
- )
- ( /510631DA $noname  XTL1 14.7456MHz {Lib=CRYSTAL}
-  (    1 /XL2 )
-  (    2 /XL1 )
- )
- ( /51062E32 $noname  U2 74HC595 {Lib=74HC595}
-  (    1 /Drivers/Hi_Drv_G )
-  (    2 /Drivers/Hi_Drv_F )
-  (    3 /Drivers/Hi_Drv_E )
-  (    4 /Drivers/Hi_Drv_A )
-  (    5 /Drivers/Hi_Drv_B )
-  (    6 /Drivers/Hi_Drv_C )
-  (    7 /Drivers/Hi_Drv_D )
-  (    8 GND )
-  (    9 N-000074 )
-  (   10 /5V )
-  (   11 N-000083 )
-  (   12 N-000016 )
-  (   13 N-000073 )
-  (   14 N-000071 )
-  (   15 /Drivers/Hi_Drv_DP )
-  (   16 /5V )
- )
- ( /5104C0A1 DIL28  MCU1 ATMEGA328P-P {Lib=ATMEGA328P-P}
-  (    1 /RST )
-  (    2 /RX )
-  (    3 /TX )
-  (    4 /Spk )
-  (    5 /KI-4 )
-  (    6 N-000029 )
-  (    7 /5V )
-  (    8 GND )
-  (    9 /XL1 )
-  (   10 /XL2 )
-  (   11 N-000028 )
-  (   12 N-000027 )
-  (   13 N-000026 )
-  (   14 N-000030 )
-  (   15 N-000073 )
-  (   16 N-000085 )
-  (   17 /MOSI )
-  (   18 /MISO )
-  (   19 /SCK )
-  (   20 /5V )
-  (   21 N-000031 )
-  (   22 GND )
-  (   23 N-000071 )
-  (   24 N-000083 )
-  (   25 N-000016 )
-  (   26 /KI-3 )
-  (   27 /KI-2 )
-  (   28 /KI-1 )
- )
- ( /5118C96A $noname  C10 0.1uF {Lib=C}
-  (    1 /5V )
-  (    2 GND )
- )
- ( /5118DD23 $noname  C11 0.1uF {Lib=C}
-  (    1 /5V )
-  (    2 GND )
- )
- ( /5118E004 $noname  C12 0.1uF {Lib=C}
-  (    1 /5V )
-  (    2 GND )
- )
- ( /511CC3D2 $noname  P3 Current_time {Lib=CONN_8X2}
-  (    1 N-000058 )
-  (    2 N-000056 )
-  (    3 /Drivers/Seg_A )
-  (    4 /Drivers/Seg_B )
-  (    5 /Drivers/Seg_C )
-  (    6 /Drivers/Seg_D )
-  (    7 /Drivers/Seg_E )
-  (    8 /Drivers/Seg_F )
-  (    9 /Drivers/Seg_G )
-  (   10 /Drivers/Seg_DP )
-  (   11 /Drivers/CC_1:1 )
-  (   12 /Drivers/CC_1:2 )
-  (   13 /Drivers/CC_1:3 )
-  (   14 /Drivers/CC_1:4 )
-  (   15 N-000059 )
-  (   16 N-000057 )
- )
- ( /511CCF2F $noname  Extra2 CONN_1 {Lib=CONN_1}
-  (    1 N-000056 )
- )
- ( /511CD467 $noname  Extra4 CONN_1 {Lib=CONN_1}
-  (    1 N-000057 )
- )
- ( /511CD4E5 $noname  Extra1 CONN_1 {Lib=CONN_1}
-  (    1 N-000058 )
- )
- ( /511CD85D $noname  Extra3 CONN_1 {Lib=CONN_1}
-  (    1 N-000059 )
- )
- ( /511D29A5 $noname  P4 Closing_time {Lib=CONN_8X2}
-  (    1 N-000055 )
-  (    2 N-000054 )
-  (    3 /Drivers/Seg_A )
-  (    4 /Drivers/Seg_B )
-  (    5 /Drivers/Seg_C )
-  (    6 /Drivers/Seg_D )
-  (    7 /Drivers/Seg_E )
-  (    8 /Drivers/Seg_F )
-  (    9 /Drivers/Seg_G )
-  (   10 /Drivers/Seg_DP )
-  (   11 /Drivers/CC_2:1 )
-  (   12 /Drivers/CC_2:2 )
-  (   13 /Drivers/CC_2:3 )
-  (   14 /Drivers/CC_2:4 )
-  (   15 N-000052 )
-  (   16 N-000053 )
- )
- ( /511D29AB $noname  Extra6 CONN_1 {Lib=CONN_1}
-  (    1 N-000054 )
- )
- ( /511D29B1 $noname  Extra8 CONN_1 {Lib=CONN_1}
-  (    1 N-000053 )
- )
- ( /511D29B7 $noname  Extra5 CONN_1 {Lib=CONN_1}
-  (    1 N-000055 )
- )
- ( /511D29BD $noname  Extra7 CONN_1 {Lib=CONN_1}
-  (    1 N-000052 )
- )
- ( /511D5241 $noname  P5 Cleanup_time {Lib=CONN_8X2}
-  (    1 N-000060 )
-  (    2 N-000067 )
-  (    3 /Drivers/Seg_A )
-  (    4 /Drivers/Seg_B )
-  (    5 /Drivers/Seg_C )
-  (    6 /Drivers/Seg_D )
-  (    7 /Drivers/Seg_E )
-  (    8 /Drivers/Seg_F )
-  (    9 /Drivers/Seg_G )
-  (   10 /Drivers/Seg_DP )
-  (   11 /Drivers/CC_3:1 )
-  (   12 /Drivers/CC_3:2 )
-  (   13 /Drivers/CC_3:3 )
-  (   14 /Drivers/CC_3:4 )
-  (   15 N-000065 )
-  (   16 N-000066 )
- )
- ( /511D5247 $noname  Extra10 CONN_1 {Lib=CONN_1}
-  (    1 N-000067 )
- )
- ( /511D524D $noname  Extra12 CONN_1 {Lib=CONN_1}
-  (    1 N-000066 )
- )
- ( /511D5253 $noname  Extra9 CONN_1 {Lib=CONN_1}
-  (    1 N-000060 )
- )
- ( /511D5259 $noname  Extra11 CONN_1 {Lib=CONN_1}
-  (    1 N-000065 )
- )
- ( /511C7819 $noname  D2 Power {Lib=LED}
-  (    1 /5V )
-  (    2 N-000068 )
- )
- ( /511C791D $noname  R30 150 {Lib=R}
-  (    1 GND )
-  (    2 N-000068 )
- )
- ( /511D0ADD $noname  Ja3 CONN_1 {Lib=CONN_1}
-  (    1 N-000069 )
- )
- ( /511D14DB $noname  Ja2 CONN_1 {Lib=CONN_1}
-  (    1 GND )
- )
- ( /511D15D1 $noname  Ja1 CONN_1 {Lib=CONN_1}
-  (    1 N-000032 )
- )
- ( /5111F0C6/5121DA4E TO92-EBC  Q28 2N3904 {Lib=BC237}
-  (    B N-000124 )
-  (    C /Drivers/CC_3:4 )
-  (    E GND )
- )
- ( /5111F0C6/5121DA4B TO92-EBC  Q22 2N3904 {Lib=BC237}
-  (    B N-000123 )
-  (    C /Drivers/CC_2:2 )
-  (    E GND )
- )
- ( /5111F0C6/5121DA48 TO92-EBC  Q27 2N3904 {Lib=BC237}
-  (    B N-000122 )
-  (    C /Drivers/CC_3:3 )
-  (    E GND )
- )
- ( /5111F0C6/5121DA45 TO92-EBC  Q21 2N3904 {Lib=BC237}
-  (    B N-000121 )
-  (    C /Drivers/CC_2:1 )
-  (    E GND )
- )
- ( /5111F0C6/5121DA41 TO92-EBC  Q26 2N3904 {Lib=BC237}
-  (    B N-000119 )
-  (    C /Drivers/CC_3:2 )
-  (    E GND )
- )
- ( /5111F0C6/5121DA3E TO92-EBC  Q20 2N3904 {Lib=BC237}
-  (    B N-000118 )
-  (    C /Drivers/CC_1:4 )
-  (    E GND )
- )
- ( /5111F0C6/5121DA31 TO92-EBC  Q25 2N3904 {Lib=BC237}
-  (    B N-000117 )
-  (    C /Drivers/CC_3:1 )
-  (    E GND )
- )
- ( /5111F0C6/5121DA2D TO92-EBC  Q19 2N3904 {Lib=BC237}
-  (    B N-000120 )
-  (    C /Drivers/CC_1:3 )
-  (    E GND )
- )
- ( /5111F0C6/5121DA29 TO92-EBC  Q24 2N3904 {Lib=BC237}
-  (    B N-000116 )
-  (    C /Drivers/CC_2:4 )
-  (    E GND )
- )
- ( /5111F0C6/5121DA26 TO92-EBC  Q18 2N3904 {Lib=BC237}
-  (    B N-000125 )
-  (    C /Drivers/CC_1:2 )
-  (    E GND )
- )
- ( /5111F0C6/5121DA22 TO92-EBC  Q23 2N3904 {Lib=BC237}
-  (    B N-000115 )
-  (    C /Drivers/CC_2:3 )
-  (    E GND )
- )
- ( /5111F0C6/5121DA1E TO92-EBC  Q17 2N3904 {Lib=BC237}
-  (    B N-000110 )
-  (    C /Drivers/CC_1:1 )
-  (    E GND )
- )
- ( /5111F0C6/5121DA07 TO92-EBC  Q15 2N3904 {Lib=BC237}
-  (    B N-000112 )
-  (    C N-000104 )
-  (    E GND )
- )
- ( /5111F0C6/5121DA02 TO92-EBC  Q16 2N3904 {Lib=BC237}
-  (    B N-000101 )
-  (    C N-000103 )
-  (    E GND )
- )
- ( /5111F0C6/5121D9FB TO92-EBC  Q12 2N3904 {Lib=BC237}
-  (    B N-000113 )
-  (    C N-000100 )
-  (    E GND )
- )
- ( /5111F0C6/5121D9F7 TO92-EBC  Q11 2N3904 {Lib=BC237}
-  (    B N-000108 )
-  (    C N-000098 )
-  (    E GND )
- )
- ( /5111F0C6/5121D9E5 TO92-EBC  Q14 2N3904 {Lib=BC237}
-  (    B N-000111 )
-  (    C N-000106 )
-  (    E GND )
- )
- ( /5111F0C6/5121D9E2 TO92-EBC  Q13 2N3904 {Lib=BC237}
-  (    B N-000114 )
-  (    C N-000105 )
-  (    E GND )
- )
- ( /5111F0C6/5121D9DB TO92-EBC  Q10 2N3904 {Lib=BC237}
-  (    B N-000107 )
-  (    C N-000099 )
-  (    E GND )
- )
- ( /5111F0C6/5121D811 TO92-EBC  Q9 2N3904 {Lib=BC237}
-  (    B N-000109 )
-  (    C N-000102 )
-  (    E GND )
- )
- ( /5111F0C6/5110C5D5 $noname  R23 1k {Lib=R}
-  (    1 N-000115 )
-  (    2 /Drivers/Lo_Drv_2:3 )
- )
- ( /5111F0C6/5110C5D2 $noname  R24 1k {Lib=R}
-  (    1 N-000116 )
-  (    2 /Drivers/Lo_Drv_2:4 )
- )
- ( /5111F0C6/5110C5CF $noname  R25 1k {Lib=R}
-  (    1 N-000117 )
-  (    2 /Drivers/Lo_Drv_3:1 )
- )
- ( /5111F0C6/5110C5CC $noname  R26 1k {Lib=R}
-  (    1 N-000119 )
-  (    2 /Drivers/Lo_Drv_3:2 )
- )
- ( /5111F0C6/5110C5C9 $noname  R27 1k {Lib=R}
-  (    1 N-000122 )
-  (    2 /Drivers/Lo_Drv_3:3 )
- )
- ( /5111F0C6/5110C5C6 $noname  R28 1k {Lib=R}
-  (    1 N-000124 )
-  (    2 /Drivers/Lo_Drv_3:4 )
- )
- ( /5111F0C6/5110C507 $noname  R22 1k {Lib=R}
-  (    1 N-000123 )
-  (    2 /Drivers/Lo_Drv_2:2 )
- )
- ( /5111F0C6/5110C4F7 $noname  R21 1k {Lib=R}
-  (    1 N-000121 )
-  (    2 /Drivers/Lo_Drv_2:1 )
- )
- ( /5111F0C6/5110C4ED $noname  R20 1k {Lib=R}
-  (    1 N-000118 )
-  (    2 /Drivers/Lo_Drv_1:4 )
- )
- ( /5111F0C6/5110C4E4 $noname  R19 1k {Lib=R}
-  (    1 N-000120 )
-  (    2 /Drivers/Lo_Drv_1:3 )
- )
- ( /5111F0C6/5110C49A $noname  R18 1k {Lib=R}
-  (    1 N-000125 )
-  (    2 /Drivers/Lo_Drv_1:2 )
- )
- ( /5111F0C6/5110BA6A $noname  R16 1k {Lib=R}
-  (    1 N-000101 )
-  (    2 /Drivers/Hi_Drv_DP )
- )
- ( /5111F0C6/5110BA68 $noname  R8 40k {Lib=R}
-  (    1 12V )
-  (    2 N-000103 )
- )
- ( /5111F0C6/5110BA67 $noname  Q8 ZVP2110A {Lib=MOSFET_P}
-  (    D /Drivers/Seg_DP )
-  (    G N-000103 )
-  (    S 12V )
- )
- ( /5111F0C6/5110BA61 $noname  R15 1k {Lib=R}
-  (    1 N-000112 )
-  (    2 /Drivers/Hi_Drv_G )
- )
- ( /5111F0C6/5110BA5F $noname  R7 40k {Lib=R}
-  (    1 12V )
-  (    2 N-000104 )
- )
- ( /5111F0C6/5110BA5E $noname  Q7 ZVP2110A {Lib=MOSFET_P}
-  (    D /Drivers/Seg_G )
-  (    G N-000104 )
-  (    S 12V )
- )
- ( /5111F0C6/5110BA59 $noname  R14 1k {Lib=R}
-  (    1 N-000111 )
-  (    2 /Drivers/Hi_Drv_F )
- )
- ( /5111F0C6/5110BA57 $noname  R6 40k {Lib=R}
-  (    1 12V )
-  (    2 N-000106 )
- )
- ( /5111F0C6/5110BA56 $noname  Q6 ZVP2110A {Lib=MOSFET_P}
-  (    D /Drivers/Seg_F )
-  (    G N-000106 )
-  (    S 12V )
- )
- ( /5111F0C6/5110BA4B $noname  R13 1k {Lib=R}
-  (    1 N-000114 )
-  (    2 /Drivers/Hi_Drv_E )
- )
- ( /5111F0C6/5110BA49 $noname  R5 40k {Lib=R}
-  (    1 12V )
-  (    2 N-000105 )
- )
- ( /5111F0C6/5110BA48 $noname  Q5 ZVP2110A {Lib=MOSFET_P}
-  (    D /Drivers/Seg_E )
-  (    G N-000105 )
-  (    S 12V )
- )
- ( /5111F0C6/5110BA39 $noname  R12 1k {Lib=R}
-  (    1 N-000113 )
-  (    2 /Drivers/Hi_Drv_D )
- )
- ( /5111F0C6/5110BA37 $noname  R4 40k {Lib=R}
-  (    1 12V )
-  (    2 N-000100 )
- )
- ( /5111F0C6/5110BA36 $noname  Q4 ZVP2110A {Lib=MOSFET_P}
-  (    D /Drivers/Seg_D )
-  (    G N-000100 )
-  (    S 12V )
- )
- ( /5111F0C6/5110BA29 $noname  R11 1k {Lib=R}
-  (    1 N-000108 )
-  (    2 /Drivers/Hi_Drv_C )
- )
- ( /5111F0C6/5110BA27 $noname  R3 40k {Lib=R}
-  (    1 12V )
-  (    2 N-000098 )
- )
- ( /5111F0C6/5110BA26 $noname  Q3 ZVP2110A {Lib=MOSFET_P}
-  (    D /Drivers/Seg_C )
-  (    G N-000098 )
-  (    S 12V )
- )
- ( /5111F0C6/5110B9E7 $noname  R10 1k {Lib=R}
-  (    1 N-000107 )
-  (    2 /Drivers/Hi_Drv_B )
- )
- ( /5111F0C6/5110B9E5 $noname  R2 40k {Lib=R}
-  (    1 12V )
-  (    2 N-000099 )
- )
- ( /5111F0C6/5110B9E4 $noname  Q2 ZVP2110A {Lib=MOSFET_P}
-  (    D /Drivers/Seg_B )
-  (    G N-000099 )
-  (    S 12V )
- )
- ( /5111F0C6/510A145D $noname  Q1 ZVP2110A {Lib=MOSFET_P}
-  (    D /Drivers/Seg_A )
-  (    G N-000102 )
-  (    S 12V )
- )
- ( /5111F0C6/510A145C $noname  R1 40k {Lib=R}
-  (    1 12V )
-  (    2 N-000102 )
- )
- ( /5111F0C6/510A1459 $noname  R17 1k {Lib=R}
-  (    1 N-000110 )
-  (    2 /Drivers/Lo_Drv_1:1 )
- )
- ( /5111F0C6/510A1457 $noname  R9 1k {Lib=R}
-  (    1 N-000109 )
-  (    2 /Drivers/Hi_Drv_A )
+ ( /5139851B D3 D4 DIODE
+  ( 1 N-000085 )
+  ( 2 N-000084 )
+ )
+ ( /51398531 D3 D5 DIODE
+  ( 1 N-000084 )
+  ( 2 12V )
+ )
+ ( /511CD4E5 PINTST Extra1 CONN_1
+  ( 1 N-000058 )
+ )
+ ( /511CCF2F PINTST Extra2 CONN_1
+  ( 1 N-000056 )
+ )
+ ( /511CD85D PINTST Extra3 CONN_1
+  ( 1 N-000059 )
+ )
+ ( /511CD467 PINTST Extra4 CONN_1
+  ( 1 N-000057 )
+ )
+ ( /511D29B7 PINTST Extra5 CONN_1
+  ( 1 N-000055 )
+ )
+ ( /511D29AB PINTST Extra6 CONN_1
+  ( 1 N-000054 )
+ )
+ ( /511D29BD PINTST Extra7 CONN_1
+  ( 1 N-000052 )
+ )
+ ( /511D29B1 PINTST Extra8 CONN_1
+  ( 1 N-000053 )
+ )
+ ( /511D5253 PINTST Extra9 CONN_1
+  ( 1 N-000060 )
+ )
+ ( /511D5247 PINTST Extra10 CONN_1
+  ( 1 N-000067 )
+ )
+ ( /511D5259 PINTST Extra11 CONN_1
+  ( 1 N-000065 )
+ )
+ ( /511D524D PINTST Extra12 CONN_1
+  ( 1 N-000066 )
+ )
+ ( /5121C850 PINTST G1 CONN_1
+  ( 1 GND )
+ )
+ ( /511487A9 JACK_ALIM J1 JACK_2P
+  ( 1 N-000082 )
+  ( 2 GND )
+  ( 3 N-000069 )
+ )
+ ( /511D15D1 PINTST Ja1 CONN_1
+  ( 1 N-000082 )
+ )
+ ( /511D14DB PINTST Ja2 CONN_1
+  ( 1 GND )
+ )
+ ( /511D0ADD PINTST Ja3 CONN_1
+  ( 1 N-000069 )
+ )
+ ( /51396C98 1pin M1 MOUNTING_HOLE
+ )
+ ( /51396CA8 1pin M2 MOUNTING_HOLE
+ )
+ ( /51396CAC 1pin M3 MOUNTING_HOLE
+ )
+ ( /51396CAF 1pin M4 MOUNTING_HOLE
+ )
+ ( /5104C0A1 DIP-28__300 MCU1 ATMEGA328P-P
+  ( 1 /RST )
+  ( 2 /RX )
+  ( 3 /TX )
+  ( 4 /Spk )
+  ( 5 /KI-4 )
+  ( 6 N-000030 )
+  ( 7 /5V )
+  ( 8 GND )
+  ( 9 /XL1 )
+  ( 10 /XL2 )
+  ( 11 N-000080 )
+  ( 12 N-000074 )
+  ( 13 N-000029 )
+  ( 14 N-000031 )
+  ( 15 N-000072 )
+  ( 16 N-000081 )
+  ( 17 /MOSI )
+  ( 18 /MISO )
+  ( 19 /SCK )
+  ( 20 /5V )
+  ( 21 N-000032 )
+  ( 22 GND )
+  ( 23 N-000070 )
+  ( 24 N-000024 )
+  ( 25 N-000073 )
+  ( 26 /KI-3 )
+  ( 27 /KI-2 )
+  ( 28 /KI-1 )
+ )
+ ( /5114809E pin_array_3x2 P1 AVR-ISP
+  ( 1 /MISO )
+  ( 2 /5V )
+  ( 3 /SCK )
+  ( 4 /MOSI )
+  ( 5 /RST )
+  ( 6 GND )
+ )
+ ( /5115D901 SIL-6 P2 Serial
+  ( 1 GND )
+  ( 2 /CTS )
+  ( 3 /5V )
+  ( 4 /RX )
+  ( 5 /TX )
+  ( 6 /RTS )
+ )
+ ( /511CC3D2 pin_array_8x2 P3 Current_time
+  ( 1 N-000058 )
+  ( 2 N-000056 )
+  ( 3 /Drivers/Seg_A )
+  ( 4 /Drivers/Seg_B )
+  ( 5 /Drivers/Seg_C )
+  ( 6 /Drivers/Seg_D )
+  ( 7 /Drivers/Seg_E )
+  ( 8 /Drivers/Seg_F )
+  ( 9 /Drivers/Seg_G )
+  ( 10 /Drivers/Seg_DP )
+  ( 11 /Drivers/CC_1:1 )
+  ( 12 /Drivers/CC_1:2 )
+  ( 13 /Drivers/CC_1:3 )
+  ( 14 /Drivers/CC_1:4 )
+  ( 15 N-000059 )
+  ( 16 N-000057 )
+ )
+ ( /511D29A5 pin_array_8x2 P4 Closing_time
+  ( 1 N-000055 )
+  ( 2 N-000054 )
+  ( 3 /Drivers/Seg_A )
+  ( 4 /Drivers/Seg_B )
+  ( 5 /Drivers/Seg_C )
+  ( 6 /Drivers/Seg_D )
+  ( 7 /Drivers/Seg_E )
+  ( 8 /Drivers/Seg_F )
+  ( 9 /Drivers/Seg_G )
+  ( 10 /Drivers/Seg_DP )
+  ( 11 /Drivers/CC_2:1 )
+  ( 12 /Drivers/CC_2:2 )
+  ( 13 /Drivers/CC_2:3 )
+  ( 14 /Drivers/CC_2:4 )
+  ( 15 N-000052 )
+  ( 16 N-000053 )
+ )
+ ( /511D5241 pin_array_8x2 P5 Cleanup_time
+  ( 1 N-000060 )
+  ( 2 N-000067 )
+  ( 3 /Drivers/Seg_A )
+  ( 4 /Drivers/Seg_B )
+  ( 5 /Drivers/Seg_C )
+  ( 6 /Drivers/Seg_D )
+  ( 7 /Drivers/Seg_E )
+  ( 8 /Drivers/Seg_F )
+  ( 9 /Drivers/Seg_G )
+  ( 10 /Drivers/Seg_DP )
+  ( 11 /Drivers/CC_3:1 )
+  ( 12 /Drivers/CC_3:2 )
+  ( 13 /Drivers/CC_3:3 )
+  ( 14 /Drivers/CC_3:4 )
+  ( 15 N-000065 )
+  ( 16 N-000066 )
+ )
+ ( /512EE0F6 SIL-2 P6 SPK
+  ( 1 N-000087 )
+  ( 2 GND )
+ )
+ ( /512F013C SIL-8 P7 Keyboard
+  ( 1 /KO-1 )
+  ( 2 /KO-2 )
+  ( 3 /KO-3 )
+  ( 4 /KO-4 )
+  ( 5 /KI-1 )
+  ( 6 /KI-2 )
+  ( 7 /KI-3 )
+  ( 8 /KI-4 )
+ )
+ ( /5111F0C6/510A145D TO92DGS Q1 ZVP2110A
+  ( D /Drivers/Seg_A )
+  ( G N-000102 )
+  ( S 12V )
+ )
+ ( /5111F0C6/5110B9E4 TO92DGS Q2 ZVP2110A
+  ( D /Drivers/Seg_B )
+  ( G N-000099 )
+  ( S 12V )
+ )
+ ( /5111F0C6/5110BA26 TO92DGS Q3 ZVP2110A
+  ( D /Drivers/Seg_C )
+  ( G N-000098 )
+  ( S 12V )
+ )
+ ( /5111F0C6/5110BA36 TO92DGS Q4 ZVP2110A
+  ( D /Drivers/Seg_D )
+  ( G N-000100 )
+  ( S 12V )
+ )
+ ( /5111F0C6/5110BA48 TO92DGS Q5 ZVP2110A
+  ( D /Drivers/Seg_E )
+  ( G N-000105 )
+  ( S 12V )
+ )
+ ( /5111F0C6/5110BA56 TO92DGS Q6 ZVP2110A
+  ( D /Drivers/Seg_F )
+  ( G N-000106 )
+  ( S 12V )
+ )
+ ( /5111F0C6/5110BA5E TO92DGS Q7 ZVP2110A
+  ( D /Drivers/Seg_G )
+  ( G N-000104 )
+  ( S 12V )
+ )
+ ( /5111F0C6/5110BA67 TO92DGS Q8 ZVP2110A
+  ( D /Drivers/Seg_DP )
+  ( G N-000103 )
+  ( S 12V )
+ )
+ ( /5111F0C6/5121D811 TO92-CBE Q9 2N3904
+  ( B N-000109 )
+  ( C N-000102 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121D9DB TO92-CBE Q10 2N3904
+  ( B N-000107 )
+  ( C N-000099 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121D9F7 TO92-CBE Q11 2N3904
+  ( B N-000108 )
+  ( C N-000098 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121D9FB TO92-CBE Q12 2N3904
+  ( B N-000113 )
+  ( C N-000100 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121D9E2 TO92-CBE Q13 2N3904
+  ( B N-000114 )
+  ( C N-000105 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121D9E5 TO92-CBE Q14 2N3904
+  ( B N-000111 )
+  ( C N-000106 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121DA07 TO92-CBE Q15 2N3904
+  ( B N-000112 )
+  ( C N-000104 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121DA02 TO92-CBE Q16 2N3904
+  ( B N-000101 )
+  ( C N-000103 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121DA1E TO92-CBE Q17 2N3904
+  ( B N-000110 )
+  ( C /Drivers/CC_1:1 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121DA26 TO92-CBE Q18 2N3904
+  ( B N-000125 )
+  ( C /Drivers/CC_1:2 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121DA2D TO92-CBE Q19 2N3904
+  ( B N-000120 )
+  ( C /Drivers/CC_1:3 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121DA3E TO92-CBE Q20 2N3904
+  ( B N-000118 )
+  ( C /Drivers/CC_1:4 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121DA45 TO92-CBE Q21 2N3904
+  ( B N-000121 )
+  ( C /Drivers/CC_2:1 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121DA4B TO92-CBE Q22 2N3904
+  ( B N-000123 )
+  ( C /Drivers/CC_2:2 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121DA22 TO92-CBE Q23 2N3904
+  ( B N-000115 )
+  ( C /Drivers/CC_2:3 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121DA29 TO92-CBE Q24 2N3904
+  ( B N-000116 )
+  ( C /Drivers/CC_2:4 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121DA31 TO92-CBE Q25 2N3904
+  ( B N-000117 )
+  ( C /Drivers/CC_3:1 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121DA41 TO92-CBE Q26 2N3904
+  ( B N-000119 )
+  ( C /Drivers/CC_3:2 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121DA48 TO92-CBE Q27 2N3904
+  ( B N-000122 )
+  ( C /Drivers/CC_3:3 )
+  ( E GND )
+ )
+ ( /5111F0C6/5121DA4E TO92-CBE Q28 2N3904
+  ( B N-000124 )
+  ( C /Drivers/CC_3:4 )
+  ( E GND )
+ )
+ ( /512EE00D TO92DGS Q29 ZVP2110A
+  ( D N-000087 )
+  ( G N-000086 )
+  ( S 12V )
+ )
+ ( /512EE00C TO92-CBE Q30 2N3904
+  ( B N-000088 )
+  ( C N-000086 )
+  ( E GND )
+ )
+ ( /5111F0C6/510A145C R1 R1 40k
+  ( 1 12V )
+  ( 2 N-000102 )
+ )
+ ( /5111F0C6/5110B9E5 R1 R2 40k
+  ( 1 12V )
+  ( 2 N-000099 )
+ )
+ ( /5111F0C6/5110BA27 R1 R3 40k
+  ( 1 12V )
+  ( 2 N-000098 )
+ )
+ ( /5111F0C6/5110BA37 R1 R4 40k
+  ( 1 12V )
+  ( 2 N-000100 )
+ )
+ ( /5111F0C6/5110BA49 R1 R5 40k
+  ( 1 12V )
+  ( 2 N-000105 )
+ )
+ ( /5111F0C6/5110BA57 R1 R6 40k
+  ( 1 12V )
+  ( 2 N-000106 )
+ )
+ ( /5111F0C6/5110BA5F R1 R7 40k
+  ( 1 12V )
+  ( 2 N-000104 )
+ )
+ ( /5111F0C6/5110BA68 R1 R8 40k
+  ( 1 12V )
+  ( 2 N-000103 )
+ )
+ ( /5111F0C6/510A1457 R1 R9 1k
+  ( 1 N-000109 )
+  ( 2 /Drivers/Hi_Drv_A )
+ )
+ ( /5111F0C6/5110B9E7 R1 R10 1k
+  ( 1 N-000107 )
+  ( 2 /Drivers/Hi_Drv_B )
+ )
+ ( /5111F0C6/5110BA29 R1 R11 1k
+  ( 1 N-000108 )
+  ( 2 /Drivers/Hi_Drv_C )
+ )
+ ( /5111F0C6/5110BA39 R1 R12 1k
+  ( 1 N-000113 )
+  ( 2 /Drivers/Hi_Drv_D )
+ )
+ ( /5111F0C6/5110BA4B R1 R13 1k
+  ( 1 N-000114 )
+  ( 2 /Drivers/Hi_Drv_E )
+ )
+ ( /5111F0C6/5110BA59 R1 R14 1k
+  ( 1 N-000111 )
+  ( 2 /Drivers/Hi_Drv_F )
+ )
+ ( /5111F0C6/5110BA61 R1 R15 1k
+  ( 1 N-000112 )
+  ( 2 /Drivers/Hi_Drv_G )
+ )
+ ( /5111F0C6/5110BA6A R1 R16 1k
+  ( 1 N-000101 )
+  ( 2 /Drivers/Hi_Drv_DP )
+ )
+ ( /5111F0C6/510A1459 R1 R17 1k
+  ( 1 N-000110 )
+  ( 2 /Drivers/Lo_Drv_1:1 )
+ )
+ ( /5111F0C6/5110C49A R1 R18 1k
+  ( 1 N-000125 )
+  ( 2 /Drivers/Lo_Drv_1:2 )
+ )
+ ( /5111F0C6/5110C4E4 R1 R19 1k
+  ( 1 N-000120 )
+  ( 2 /Drivers/Lo_Drv_1:3 )
+ )
+ ( /5111F0C6/5110C4ED R1 R20 1k
+  ( 1 N-000118 )
+  ( 2 /Drivers/Lo_Drv_1:4 )
+ )
+ ( /5111F0C6/5110C4F7 R1 R21 1k
+  ( 1 N-000121 )
+  ( 2 /Drivers/Lo_Drv_2:1 )
+ )
+ ( /5111F0C6/5110C507 R1 R22 1k
+  ( 1 N-000123 )
+  ( 2 /Drivers/Lo_Drv_2:2 )
+ )
+ ( /5111F0C6/5110C5D5 R1 R23 1k
+  ( 1 N-000115 )
+  ( 2 /Drivers/Lo_Drv_2:3 )
+ )
+ ( /5111F0C6/5110C5D2 R1 R24 1k
+  ( 1 N-000116 )
+  ( 2 /Drivers/Lo_Drv_2:4 )
+ )
+ ( /5111F0C6/5110C5CF R1 R25 1k
+  ( 1 N-000117 )
+  ( 2 /Drivers/Lo_Drv_3:1 )
+ )
+ ( /5111F0C6/5110C5CC R1 R26 1k
+  ( 1 N-000119 )
+  ( 2 /Drivers/Lo_Drv_3:2 )
+ )
+ ( /5111F0C6/5110C5C9 R1 R27 1k
+  ( 1 N-000122 )
+  ( 2 /Drivers/Lo_Drv_3:3 )
+ )
+ ( /5111F0C6/5110C5C6 R1 R28 1k
+  ( 1 N-000124 )
+  ( 2 /Drivers/Lo_Drv_3:4 )
+ )
+ ( /5114859D R1 R29 10k
+  ( 1 /RST )
+  ( 2 /5V )
+ )
+ ( /511C791D R1 R30 150
+  ( 1 GND )
+  ( 2 N-000068 )
+ )
+ ( /5129AFAC R3 R31 10k
+  ( 1 /5V )
+  ( 2 N-000080 )
+ )
+ ( /5129B009 R3 R32 10k
+  ( 1 /5V )
+  ( 2 N-000081 )
+ )
+ ( /5129B02A R3 R33 10k
+  ( 1 /5V )
+  ( 2 N-000072 )
+ )
+ ( /512EE00E R1 R34 40k
+  ( 1 12V )
+  ( 2 N-000086 )
+ )
+ ( /512EE010 R1 R35 1k
+  ( 1 N-000088 )
+  ( 2 /Spk )
+ )
+ ( /51398422 PINTST RX1 CONN_1
+  ( 1 /RX )
+ )
+ ( /5115D97D PINTST SER1 CONN_1
+  ( 1 GND )
+ )
+ ( /5115D979 PINTST SER2 CONN_1
+  ( 1 /CTS )
+ )
+ ( /5115D975 PINTST SER3 CONN_1
+  ( 1 /5V )
+ )
+ ( /5115D972 PINTST SER4 CONN_1
+  ( 1 /RX )
+ )
+ ( /5115D96F PINTST SER5 CONN_1
+  ( 1 /TX )
+ )
+ ( /5115D953 PINTST SER6 CONN_1
+  ( 1 /RTS )
+ )
+ ( /5139861F PINTST Skip1 CONN_1
+  ( 1 N-000082 )
+ )
+ ( /5139864A PINTST Skip2 CONN_1
+  ( 1 12V )
+ )
+ ( /5114A61B PINTST Sout-1 CONN_1
+  ( 1 N-000004 )
+ )
+ ( /5114870E SW_PUSH_SMALL SW1 Reset
+  ( 1 /RST )
+  ( 2 GND )
+ )
+ ( /51398437 PINTST TX1 CONN_1
+  ( 1 /TX )
+ )
+ ( /51135C6D TO220 U1 LM1086
+  ( 1 GND )
+  ( 2 /5V )
+  ( 3 N-000077 )
+ )
+ ( /51062E32 DIP-16__300 U2 74HC595
+  ( 1 /Drivers/Hi_Drv_G )
+  ( 2 /Drivers/Hi_Drv_F )
+  ( 3 /Drivers/Hi_Drv_E )
+  ( 4 /Drivers/Hi_Drv_A )
+  ( 5 /Drivers/Hi_Drv_B )
+  ( 6 /Drivers/Hi_Drv_C )
+  ( 7 /Drivers/Hi_Drv_D )
+  ( 8 GND )
+  ( 9 N-000008 )
+  ( 10 /5V )
+  ( 11 N-000024 )
+  ( 12 N-000073 )
+  ( 13 N-000080 )
+  ( 14 N-000074 )
+  ( 15 /Drivers/Hi_Drv_DP )
+  ( 16 /5V )
+ )
+ ( /510633CB DIP-16__300 U3 74HC595
+  ( 1 /Drivers/Lo_Drv_2:3 )
+  ( 2 /Drivers/Lo_Drv_2:2 )
+  ( 3 /Drivers/Lo_Drv_2:1 )
+  ( 4 /Drivers/Lo_Drv_3:4 )
+  ( 5 /Drivers/Lo_Drv_3:3 )
+  ( 6 /Drivers/Lo_Drv_3:2 )
+  ( 7 /Drivers/Lo_Drv_3:1 )
+  ( 8 GND )
+  ( 9 N-000020 )
+  ( 10 /5V )
+  ( 11 N-000024 )
+  ( 12 N-000073 )
+  ( 13 N-000081 )
+  ( 14 N-000008 )
+  ( 15 /Drivers/Lo_Drv_2:4 )
+  ( 16 /5V )
+ )
+ ( /510633E3 DIP-16__300 U4 74HC595
+  ( 1 /KO-2 )
+  ( 2 /KO-3 )
+  ( 3 /KO-4 )
+  ( 4 /Drivers/Lo_Drv_1:4 )
+  ( 5 /Drivers/Lo_Drv_1:3 )
+  ( 6 /Drivers/Lo_Drv_1:2 )
+  ( 7 /Drivers/Lo_Drv_1:1 )
+  ( 8 GND )
+  ( 9 N-000004 )
+  ( 10 /5V )
+  ( 11 N-000024 )
+  ( 12 N-000073 )
+  ( 13 N-000072 )
+  ( 14 N-000020 )
+  ( 15 /KO-1 )
+  ( 16 /5V )
+ )
+ ( /5121C832 PINTST V1 CONN_1
+  ( 1 N-000082 )
+ )
+ ( /510631DA HC-49V XTL1 14.7456MHz
+  ( 1 /XL2 )
+  ( 2 /XL1 )
  )
 )
 *
 { Allowed footprints by component:
-$component D5
- D?
- S*
-$endlist
-$component D4
- D?
- S*
-$endlist
-$component D3
- D?
- S*
-$endlist
-$component R35
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R34
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component Q30
- TO92-EBC
-$endlist
-$component R33
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R32
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R31
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component C7
- CP*
- SM*
-$endlist
-$component C6
- CP*
- SM*
-$endlist
-$component C3
- SM*
- C?
- C1-1
-$endlist
 $component C1
  SM*
  C?
@@ -722,7 +656,7 @@ $component C2
  C?
  C1-1
 $endlist
-$component C5
+$component C3
  SM*
  C?
  C1-1
@@ -732,20 +666,18 @@ $component C4
  C?
  C1-1
 $endlist
-$component R29
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component C5
+ SM*
+ C?
+ C1-1
 $endlist
-$component D1
- D?
- S*
+$component C6
+ CP*
+ SM*
 $endlist
-$component MCU1
- 28DIP-ELL600
- 28dip600
+$component C7
+ CP*
+ SM*
 $endlist
 $component C10
  SM*
@@ -762,6 +694,10 @@ $component C12
  C?
  C1-1
 $endlist
+$component D1
+ D?
+ S*
+$endlist
 $component D2
  LED-3MM
  LED-5MM
@@ -771,47 +707,38 @@ $component D2
  LED-1206
  LEDV
 $endlist
-$component R30
- R?
- SM0603
- SM0805
- R?-*
- SM1206
+$component D3
+ D?
+ S*
 $endlist
-$component Q28
+$component D4
+ D?
+ S*
+$endlist
+$component D5
+ D?
+ S*
+$endlist
+$component MCU1
+ 28DIP-ELL600
+ 28dip600
+$endlist
+$component Q9
  TO92-EBC
 $endlist
-$component Q22
+$component Q10
  TO92-EBC
 $endlist
-$component Q27
+$component Q11
  TO92-EBC
 $endlist
-$component Q21
+$component Q12
  TO92-EBC
 $endlist
-$component Q26
+$component Q13
  TO92-EBC
 $endlist
-$component Q20
- TO92-EBC
-$endlist
-$component Q25
- TO92-EBC
-$endlist
-$component Q19
- TO92-EBC
-$endlist
-$component Q24
- TO92-EBC
-$endlist
-$component Q18
- TO92-EBC
-$endlist
-$component Q23
- TO92-EBC
-$endlist
-$component Q17
+$component Q14
  TO92-EBC
 $endlist
 $component Q15
@@ -820,23 +747,198 @@ $endlist
 $component Q16
  TO92-EBC
 $endlist
-$component Q12
+$component Q17
  TO92-EBC
 $endlist
-$component Q11
+$component Q18
  TO92-EBC
 $endlist
-$component Q14
+$component Q19
  TO92-EBC
 $endlist
-$component Q13
+$component Q20
  TO92-EBC
 $endlist
-$component Q10
+$component Q21
  TO92-EBC
 $endlist
-$component Q9
+$component Q22
  TO92-EBC
+$endlist
+$component Q23
+ TO92-EBC
+$endlist
+$component Q24
+ TO92-EBC
+$endlist
+$component Q25
+ TO92-EBC
+$endlist
+$component Q26
+ TO92-EBC
+$endlist
+$component Q27
+ TO92-EBC
+$endlist
+$component Q28
+ TO92-EBC
+$endlist
+$component Q30
+ TO92-EBC
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R9
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R10
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R11
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R12
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R13
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R14
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R15
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R16
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R17
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R18
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R19
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R20
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R21
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R22
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
 $endlist
 $component R23
  R?
@@ -880,154 +982,49 @@ $component R28
  R?-*
  SM1206
 $endlist
-$component R22
+$component R29
  R?
  SM0603
  SM0805
  R?-*
  SM1206
 $endlist
-$component R21
+$component R30
  R?
  SM0603
  SM0805
  R?-*
  SM1206
 $endlist
-$component R20
+$component R31
  R?
  SM0603
  SM0805
  R?-*
  SM1206
 $endlist
-$component R19
+$component R32
  R?
  SM0603
  SM0805
  R?-*
  SM1206
 $endlist
-$component R18
+$component R33
  R?
  SM0603
  SM0805
  R?-*
  SM1206
 $endlist
-$component R16
+$component R34
  R?
  SM0603
  SM0805
  R?-*
  SM1206
 $endlist
-$component R8
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R15
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R7
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R14
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R6
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R13
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R5
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R12
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R4
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R11
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R3
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R10
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R2
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R1
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R17
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R9
+$component R35
  R?
  SM0603
  SM0805
@@ -1036,511 +1033,3 @@ $component R9
 $endlist
 $endfootprintlist
 }
-{ Pin List by Nets
-Net 1 "/Drivers/Lo Drv 1:3" "Lo Drv 1:3"
- R19 2
- U4 5
-Net 2 "/Drivers/Lo Drv 1:1" "Lo Drv 1:1"
- R17 2
- U4 7
-Net 3 "GND" "GND"
- C4 2
- U2 8
- C5 2
- C3 2
- SER1 1
- C6 2
- G1 1
- C7 2
- C2 2
- C1 2
- P2 1
- SW1 2
- Q30 E
- P6 2
- U1 1
- MCU1 22
- MCU1 8
- C12 2
- C10 2
- C11 2
- R30 1
- Ja2 1
- Q15 E
- Q19 E
- Q24 E
- Q18 E
- Q23 E
- Q17 E
- Q28 E
- Q22 E
- Q27 E
- Q21 E
- Q26 E
- Q20 E
- Q25 E
- Q16 E
- U4 8
- P1 6
- Q13 E
- J1 2
- Q11 E
- Q14 E
- Q10 E
- U3 8
- Q12 E
- Q9 E
-Net 4 "" ""
- U4 9
- Sout-1 1
-Net 5 "/Drivers/Lo Drv 2:4" "Lo Drv 2:4"
- U3 15
- R24 2
-Net 6 "/Drivers/CC 1:1" "CC 1:1"
- P3 11
- Q17 C
-Net 7 "/5V" "5V"
- C1 1
- P2 3
- C12 1
- R32 1
- C11 1
- R33 1
- C10 1
- C7 1
- C2 1
- R31 1
- SER3 1
- U4 10
- U3 16
- U2 10
- MCU1 20
- U4 16
- MCU1 7
- R29 2
- P1 2
- U1 2
- D2 1
- U3 10
- U2 16
-Net 8 "/XL1" "XL1"
- C4 1
- XTL1 2
- MCU1 9
-Net 9 "/Drivers/Hi Drv G" "Hi Drv G"
- U2 1
- R15 2
-Net 10 "/Drivers/Hi Drv F" "Hi Drv F"
- R14 2
- U2 2
-Net 11 "/Drivers/Hi Drv E" "Hi Drv E"
- R13 2
- U2 3
-Net 12 "/Drivers/Hi Drv A" "Hi Drv A"
- R9 2
- U2 4
-Net 13 "/Drivers/Hi Drv B" "Hi Drv B"
- R10 2
- U2 5
-Net 14 "/Drivers/Hi Drv C" "Hi Drv C"
- R11 2
- U2 6
-Net 15 "/Drivers/Hi Drv D" "Hi Drv D"
- R12 2
- U2 7
-Net 16 "" ""
- MCU1 25
- U3 12
- U4 12
- U2 12
-Net 17 "/Drivers/Lo Drv 2:1" "Lo Drv 2:1"
- U3 3
- R21 2
-Net 18 "/Drivers/Seg DP" "Seg DP"
- P4 10
- P5 10
- P3 10
- Q8 D
-Net 19 "/Drivers/Lo Drv 3:3" "Lo Drv 3:3"
- U3 5
- R27 2
-Net 20 "/Drivers/Lo Drv 3:1" "Lo Drv 3:1"
- R25 2
- U3 7
-Net 21 "" ""
- U4 14
- U3 9
-Net 22 "/MOSI" "MOSI"
- U4 13
- MCU1 17
- R33 2
- P1 4
-Net 23 "/RTS" "RTS"
- P2 6
- SER6 1
-Net 24 "/TX" "TX"
- P2 5
- SER5 1
- TX1 1
- MCU1 3
-Net 25 "/RX" "RX"
- MCU1 2
- SER4 1
- P2 4
- RX1 1
-Net 26 "" ""
- A13 1
- MCU1 13
-Net 27 "" ""
- MCU1 12
- A12 1
-Net 28 "" ""
- MCU1 11
- A11 1
-Net 29 "" ""
- MCU1 6
- A6 1
-Net 30 "" ""
- A14 1
- MCU1 14
-Net 31 "" ""
- Aref1 1
- MCU1 21
- C3 1
-Net 32 "" ""
- Ja1 1
- V1 1
- Skip1 1
- D3 1
- J1 1
-Net 33 "/RST" "RST"
- P1 5
- MCU1 1
- R29 1
- SW1 1
-Net 34 "/Drivers/Lo Drv 1:4" "Lo Drv 1:4"
- U4 4
- R20 2
-Net 35 "/Drivers/Lo Drv 1:2" "Lo Drv 1:2"
- U4 6
- R18 2
-Net 36 "/Drivers/CC 1:4" "CC 1:4"
- Q20 C
- P3 14
-Net 37 "/Drivers/Lo Drv 2:2" "Lo Drv 2:2"
- U3 2
- R22 2
-Net 38 "/Drivers/CC 1:2" "CC 1:2"
- Q18 C
- P3 12
-Net 39 "/CTS" "CTS"
- SER2 1
- P2 2
-Net 40 "12V" "12V"
- D5 2
- Q4 S
- Skip2 1
- Q6 S
- R3 1
- D1 1
- R1 1
- Q29 S
- Q8 S
- R34 1
- Q7 S
- R6 1
- R8 1
- R4 1
- Q3 S
- Q1 S
- Q2 S
- Q5 S
- R5 1
- R7 1
- R2 1
-Net 41 "/Drivers/Lo Drv 3:2" "Lo Drv 3:2"
- R26 2
- U3 6
-Net 42 "/Drivers/CC 2:3" "CC 2:3"
- P4 13
- Q23 C
-Net 43 "/Drivers/Seg B" "Seg B"
- P5 4
- Q2 D
- P4 4
- P3 4
-Net 44 "/Drivers/Seg C" "Seg C"
- Q3 D
- P4 5
- P3 5
- P5 5
-Net 45 "/Drivers/Seg D" "Seg D"
- P4 6
- P5 6
- Q4 D
- P3 6
-Net 46 "/Drivers/Seg E" "Seg E"
- P5 7
- P3 7
- P4 7
- Q5 D
-Net 47 "/Drivers/Seg G" "Seg G"
- P3 9
- Q7 D
- P5 9
- P4 9
-Net 48 "/Drivers/CC 2:1" "CC 2:1"
- Q21 C
- P4 11
-Net 49 "/Drivers/CC 2:2" "CC 2:2"
- Q22 C
- P4 12
-Net 50 "/Drivers/Seg A" "Seg A"
- P5 3
- Q1 D
- P3 3
- P4 3
-Net 51 "/Drivers/CC 2:4" "CC 2:4"
- Q24 C
- P4 14
-Net 52 "" ""
- P4 15
- Extra7 1
-Net 53 "" ""
- P4 16
- Extra8 1
-Net 54 "" ""
- Extra6 1
- P4 2
-Net 55 "" ""
- Extra5 1
- P4 1
-Net 56 "" ""
- P3 2
- Extra2 1
-Net 57 "" ""
- P3 16
- Extra4 1
-Net 58 "" ""
- Extra1 1
- P3 1
-Net 59 "" ""
- P3 15
- Extra3 1
-Net 60 "" ""
- Extra9 1
- P5 1
-Net 61 "/Drivers/CC 3:1" "CC 3:1"
- Q25 C
- P5 11
-Net 62 "/Drivers/CC 3:2" "CC 3:2"
- Q26 C
- P5 12
-Net 63 "/Drivers/CC 3:3" "CC 3:3"
- Q27 C
- P5 13
-Net 64 "/Drivers/CC 3:4" "CC 3:4"
- Q28 C
- P5 14
-Net 65 "" ""
- Extra11 1
- P5 15
-Net 66 "" ""
- Extra12 1
- P5 16
-Net 67 "" ""
- P5 2
- Extra10 1
-Net 68 "" ""
- R30 2
- D2 2
-Net 69 "" ""
- J1 3
- Ja3 1
-Net 70 "/Drivers/Seg F" "Seg F"
- P5 8
- Q6 D
- P4 8
- P3 8
-Net 71 "" ""
- U2 14
- MCU1 23
-Net 72 "/XL2" "XL2"
- C5 1
- MCU1 10
- XTL1 1
-Net 73 "" ""
- R31 2
- MCU1 15
- U2 13
-Net 74 "" ""
- U2 9
- U3 14
-Net 75 "/Drivers/Hi Drv DP" "Hi Drv DP"
- R16 2
- U2 15
-Net 76 "/MISO" "MISO"
- P1 1
- MCU1 18
-Net 77 "" ""
- C6 1
- U1 3
- D1 2
-Net 78 "/Drivers/CC 1:3" "CC 1:3"
- Q19 C
- P3 13
-Net 79 "/SCK" "SCK"
- P1 3
- MCU1 19
-Net 80 "/Drivers/Lo Drv 2:3" "Lo Drv 2:3"
- R23 2
- U3 1
-Net 81 "" ""
- Q29 G
- R34 2
- Q30 C
-Net 82 "" ""
- Q29 D
- P6 1
-Net 83 "" ""
- MCU1 24
- U2 11
- U4 11
- U3 11
-Net 84 "/Drivers/Lo Drv 3:4" "Lo Drv 3:4"
- R28 2
- U3 4
-Net 85 "" ""
- MCU1 16
- R32 2
- U3 13
-Net 86 "" ""
- D5 1
- D4 2
-Net 87 "" ""
- D3 2
- D4 1
-Net 88 "" ""
- Q30 B
- R35 1
-Net 89 "/Spk" "Spk"
- R35 2
- MCU1 4
-Net 90 "/KO-1" "KO-1"
- U4 15
- P7 1
-Net 91 "/KO-2" "KO-2"
- P7 2
- U4 1
-Net 92 "/KO-3" "KO-3"
- P7 3
- U4 2
-Net 93 "/KO-4" "KO-4"
- U4 3
- P7 4
-Net 94 "/KI-1" "KI-1"
- P7 5
- MCU1 28
-Net 95 "/KI-2" "KI-2"
- P7 6
- MCU1 27
-Net 96 "/KI-3" "KI-3"
- P7 7
- MCU1 26
-Net 97 "/KI-4" "KI-4"
- MCU1 5
- P7 8
-Net 98 "" ""
- R3 2
- Q3 G
- Q11 C
-Net 99 "" ""
- R2 2
- Q2 G
- Q10 C
-Net 100 "" ""
- Q4 G
- R4 2
- Q12 C
-Net 101 "" ""
- Q16 B
- R16 1
-Net 102 "" ""
- Q9 C
- R1 2
- Q1 G
-Net 103 "" ""
- R8 2
- Q8 G
- Q16 C
-Net 104 "" ""
- Q15 C
- Q7 G
- R7 2
-Net 105 "" ""
- Q13 C
- R5 2
- Q5 G
-Net 106 "" ""
- Q14 C
- R6 2
- Q6 G
-Net 107 "" ""
- R10 1
- Q10 B
-Net 108 "" ""
- R11 1
- Q11 B
-Net 109 "" ""
- Q9 B
- R9 1
-Net 110 "" ""
- R17 1
- Q17 B
-Net 111 "" ""
- Q14 B
- R14 1
-Net 112 "" ""
- Q15 B
- R15 1
-Net 113 "" ""
- Q12 B
- R12 1
-Net 114 "" ""
- Q13 B
- R13 1
-Net 115 "" ""
- Q23 B
- R23 1
-Net 116 "" ""
- R24 1
- Q24 B
-Net 117 "" ""
- Q25 B
- R25 1
-Net 118 "" ""
- R20 1
- Q20 B
-Net 119 "" ""
- R26 1
- Q26 B
-Net 120 "" ""
- Q19 B
- R19 1
-Net 121 "" ""
- Q21 B
- R21 1
-Net 122 "" ""
- Q27 B
- R27 1
-Net 123 "" ""
- R22 1
- Q22 B
-Net 124 "" ""
- R28 1
- Q28 B
-Net 125 "" ""
- Q18 B
- R18 1
-}
-#End
