@@ -1,4 +1,4 @@
-PCBNEW-BOARD Version 1 date 3/8/2013 10:59:32 PM
+PCBNEW-BOARD Version 1 date 3/8/2013 11:02:57 PM
 
 # Created by Pcbnew(2012-01-19 BZR 3256)-stable
 
@@ -10,7 +10,7 @@ EnabledLayers 1FFF8001
 Links 256
 NoConn 0
 Di 34212 14045 88038 64901
-Ndraw 8
+Ndraw 9
 Ntrack 751
 Nzone 0
 BoardThickness 630
@@ -6156,6 +6156,11 @@ Of 0.000000 0.000000 0.000000
 Ro 0.000000 0.000000 0.000000
 $EndSHAPE3D
 $EndMODULE  PINTST
+$TEXTPCB
+Te "https://github.com/BruceFletcher/SpaceTime"
+Po 60500 62500 600 800 120 0
+De 21 1 0 Normal C
+$EndTEXTPCB
 $DRAWSEGMENT
 Po 0 42000 17500 42750 16750 150
 De 20 0 900 0 0
