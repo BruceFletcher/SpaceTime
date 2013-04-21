@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 3/7/2013 8:44:00 PM
+EESchema-DOCLIB  Version 2.0  Date: 3/27/2013 10:44:22 PM
 #
 $CMP 74HC595
 D 8 bits serial in // out Shift Register 3 State Out
@@ -23,8 +23,8 @@ F http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/DATASH
 $ENDCMP
 #
 $CMP LM1086
-D Linear Regulator
-K POWER REGUL
+D LM1086
+K POWER REGULATOR LM1086
 F http://www.ti.com/lit/ds/symlink/lm1086.pdf
 $ENDCMP
 #

@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date 3/8/2013 11:48:17 PM
+EESchema Schematic File Version 2  date 4/20/2013 11:03:25 PM
 LIBS:SpaceTime
 LIBS:power
 LIBS:device
@@ -37,24 +37,14 @@ $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title "SpaceTime clock"
-Date "9 mar 2013"
-Rev "0.2"
+Date "19 apr 2013"
+Rev "0.3"
 Comp ""
 Comment1 "7-seg display drivers: 8 high-side segment MOSFETs, 12 low-side CC NPNs"
 Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L BC237 Q28
-U 1 1 5121DA4E
-P 9900 5900
-F 0 "Q28" H 10100 5800 50  0000 C CNN
-F 1 "2N3904" H 10150 6050 50  0000 C CNN
-F 2 "TO92-EBC" H 10090 5900 30  0001 C CNN
-	1    9900 5900
-	1    0    0    -1  
-$EndComp
 $Comp
 L BC237 Q22
 U 1 1 5121DA4B
@@ -63,16 +53,6 @@ F 0 "Q22" H 7875 5800 50  0000 C CNN
 F 1 "2N3904" H 7925 6050 50  0000 C CNN
 F 2 "TO92-EBC" H 7865 5900 30  0001 C CNN
 	1    7675 5900
-	1    0    0    -1  
-$EndComp
-$Comp
-L BC237 Q27
-U 1 1 5121DA48
-P 9900 4950
-F 0 "Q27" H 10100 4850 50  0000 C CNN
-F 1 "2N3904" H 10150 5100 50  0000 C CNN
-F 2 "TO92-EBC" H 10090 4950 30  0001 C CNN
-	1    9900 4950
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -86,16 +66,6 @@ F 2 "TO92-EBC" H 7865 4950 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L BC237 Q26
-U 1 1 5121DA41
-P 9900 4000
-F 0 "Q26" H 10100 3900 50  0000 C CNN
-F 1 "2N3904" H 10150 4150 50  0000 C CNN
-F 2 "TO92-EBC" H 10090 4000 30  0001 C CNN
-	1    9900 4000
-	1    0    0    -1  
-$EndComp
-$Comp
 L BC237 Q20
 U 1 1 5121DA3E
 P 7675 4000
@@ -103,16 +73,6 @@ F 0 "Q20" H 7875 3900 50  0000 C CNN
 F 1 "2N3904" H 7925 4150 50  0000 C CNN
 F 2 "TO92-EBC" H 7865 4000 30  0001 C CNN
 	1    7675 4000
-	1    0    0    -1  
-$EndComp
-$Comp
-L BC237 Q25
-U 1 1 5121DA31
-P 9900 3050
-F 0 "Q25" H 10100 2950 50  0000 C CNN
-F 1 "2N3904" H 10150 3200 50  0000 C CNN
-F 2 "TO92-EBC" H 10090 3050 30  0001 C CNN
-	1    9900 3050
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -246,10 +206,10 @@ F 2 "TO92-EBC" H 2115 1825 30  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR022
+L GND #PWR020
 U 1 1 5110C5D6
 P 10000 1525
-F 0 "#PWR022" H 10000 1525 30  0001 C CNN
+F 0 "#PWR020" H 10000 1525 30  0001 C CNN
 F 1 "GND" H 10000 1455 30  0001 C CNN
 	1    10000 1525
 	1    0    0    -1  
@@ -264,9 +224,9 @@ F 1 "1k" V 9450 1225 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text HLabel 10050 925  2    60   Output ~ 0
-CC 2:3
+CC 1:4
 Text HLabel 9150 1225 0    60   Input ~ 0
-Lo Drv 2:3
+Lo Drv 1:4
 Wire Wire Line
 	10050 925  10000 925 
 Wire Wire Line
@@ -284,9 +244,9 @@ Wire Wire Line
 Wire Wire Line
 	10000 1825 10050 1825
 Text HLabel 9150 2125 0    60   Input ~ 0
-Lo Drv 2:4
+Lo Drv 1:2
 Text HLabel 10050 1825 2    60   Output ~ 0
-CC 2:4
+CC 1:2
 $Comp
 L R R24
 U 1 1 5110C5D2
@@ -297,139 +257,19 @@ F 1 "1k" V 9450 2125 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR023
+L GND #PWR021
 U 1 1 5110C5D1
 P 10000 2425
-F 0 "#PWR023" H 10000 2425 30  0001 C CNN
+F 0 "#PWR021" H 10000 2425 30  0001 C CNN
 F 1 "GND" H 10000 2355 30  0001 C CNN
 	1    10000 2425
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	9150 3050 9200 3050
-Wire Wire Line
-	10000 3250 10000 3350
-Wire Wire Line
-	10000 2850 10000 2750
-Wire Wire Line
-	10000 2750 10050 2750
-Text HLabel 9150 3050 0    60   Input ~ 0
-Lo Drv 3:1
-Text HLabel 10050 2750 2    60   Output ~ 0
-CC 3:1
 $Comp
-L R R25
-U 1 1 5110C5CF
-P 9450 3050
-F 0 "R25" V 9530 3050 50  0000 C CNN
-F 1 "1k" V 9450 3050 50  0000 C CNN
-	1    9450 3050
-	0    1    1    0   
-$EndComp
-$Comp
-L GND #PWR024
-U 1 1 5110C5CE
-P 10000 3350
-F 0 "#PWR024" H 10000 3350 30  0001 C CNN
-F 1 "GND" H 10000 3280 30  0001 C CNN
-	1    10000 3350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9150 4000 9200 4000
-Wire Wire Line
-	10000 4200 10000 4300
-Wire Wire Line
-	10000 3800 10000 3700
-Wire Wire Line
-	10000 3700 10050 3700
-Text HLabel 9150 4000 0    60   Input ~ 0
-Lo Drv 3:2
-Text HLabel 10050 3700 2    60   Output ~ 0
-CC 3:2
-$Comp
-L R R26
-U 1 1 5110C5CC
-P 9450 4000
-F 0 "R26" V 9530 4000 50  0000 C CNN
-F 1 "1k" V 9450 4000 50  0000 C CNN
-	1    9450 4000
-	0    1    1    0   
-$EndComp
-$Comp
-L GND #PWR025
-U 1 1 5110C5CB
-P 10000 4300
-F 0 "#PWR025" H 10000 4300 30  0001 C CNN
-F 1 "GND" H 10000 4230 30  0001 C CNN
-	1    10000 4300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9150 4950 9200 4950
-Wire Wire Line
-	10000 5150 10000 5250
-Wire Wire Line
-	10000 4750 10000 4650
-Wire Wire Line
-	10000 4650 10050 4650
-Text HLabel 9150 4950 0    60   Input ~ 0
-Lo Drv 3:3
-Text HLabel 10050 4650 2    60   Output ~ 0
-CC 3:3
-$Comp
-L R R27
-U 1 1 5110C5C9
-P 9450 4950
-F 0 "R27" V 9530 4950 50  0000 C CNN
-F 1 "1k" V 9450 4950 50  0000 C CNN
-	1    9450 4950
-	0    1    1    0   
-$EndComp
-$Comp
-L GND #PWR026
-U 1 1 5110C5C8
-P 10000 5250
-F 0 "#PWR026" H 10000 5250 30  0001 C CNN
-F 1 "GND" H 10000 5180 30  0001 C CNN
-	1    10000 5250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9150 5900 9200 5900
-Wire Wire Line
-	10000 6100 10000 6200
-Wire Wire Line
-	10000 5700 10000 5600
-Wire Wire Line
-	10000 5600 10050 5600
-Text HLabel 9150 5900 0    60   Input ~ 0
-Lo Drv 3:4
-Text HLabel 10050 5600 2    60   Output ~ 0
-CC 3:4
-$Comp
-L R R28
-U 1 1 5110C5C6
-P 9450 5900
-F 0 "R28" V 9530 5900 50  0000 C CNN
-F 1 "1k" V 9450 5900 50  0000 C CNN
-	1    9450 5900
-	0    1    1    0   
-$EndComp
-$Comp
-L GND #PWR027
-U 1 1 5110C5C5
-P 10000 6200
-F 0 "#PWR027" H 10000 6200 30  0001 C CNN
-F 1 "GND" H 10000 6130 30  0001 C CNN
-	1    10000 6200
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR028
+L GND #PWR022
 U 1 1 5110C508
 P 7775 6200
-F 0 "#PWR028" H 7775 6200 30  0001 C CNN
+F 0 "#PWR022" H 7775 6200 30  0001 C CNN
 F 1 "GND" H 7775 6130 30  0001 C CNN
 	1    7775 6200
 	1    0    0    -1  
@@ -444,9 +284,9 @@ F 1 "1k" V 7225 5900 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text HLabel 7825 5600 2    60   Output ~ 0
-CC 2:2
+CC 1:3
 Text HLabel 6925 5900 0    60   Input ~ 0
-Lo Drv 2:2
+Lo Drv 1:3
 Wire Wire Line
 	7825 5600 7775 5600
 Wire Wire Line
@@ -456,10 +296,10 @@ Wire Wire Line
 Wire Wire Line
 	6925 5900 6975 5900
 $Comp
-L GND #PWR029
+L GND #PWR023
 U 1 1 5110C4F8
 P 7775 5250
-F 0 "#PWR029" H 7775 5250 30  0001 C CNN
+F 0 "#PWR023" H 7775 5250 30  0001 C CNN
 F 1 "GND" H 7775 5180 30  0001 C CNN
 	1    7775 5250
 	1    0    0    -1  
@@ -474,9 +314,9 @@ F 1 "1k" V 7225 4950 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text HLabel 7825 4650 2    60   Output ~ 0
-CC 2:1
+CC 1:1
 Text HLabel 6925 4950 0    60   Input ~ 0
-Lo Drv 2:1
+Lo Drv 1:1
 Wire Wire Line
 	7825 4650 7775 4650
 Wire Wire Line
@@ -486,10 +326,10 @@ Wire Wire Line
 Wire Wire Line
 	6925 4950 6975 4950
 $Comp
-L GND #PWR030
+L GND #PWR024
 U 1 1 5110C4EE
 P 7775 4300
-F 0 "#PWR030" H 7775 4300 30  0001 C CNN
+F 0 "#PWR024" H 7775 4300 30  0001 C CNN
 F 1 "GND" H 7775 4230 30  0001 C CNN
 	1    7775 4300
 	1    0    0    -1  
@@ -504,9 +344,9 @@ F 1 "1k" V 7225 4000 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text HLabel 7825 3700 2    60   Output ~ 0
-CC 1:4
+CC 2:2
 Text HLabel 6925 4000 0    60   Input ~ 0
-Lo Drv 1:4
+Lo Drv 2:2
 Wire Wire Line
 	7825 3700 7775 3700
 Wire Wire Line
@@ -516,10 +356,10 @@ Wire Wire Line
 Wire Wire Line
 	6925 4000 6975 4000
 $Comp
-L GND #PWR031
+L GND #PWR025
 U 1 1 5110C4E5
 P 7775 3350
-F 0 "#PWR031" H 7775 3350 30  0001 C CNN
+F 0 "#PWR025" H 7775 3350 30  0001 C CNN
 F 1 "GND" H 7775 3280 30  0001 C CNN
 	1    7775 3350
 	1    0    0    -1  
@@ -534,9 +374,9 @@ F 1 "1k" V 7225 3050 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text HLabel 7825 2750 2    60   Output ~ 0
-CC 1:3
+CC 2:4
 Text HLabel 6925 3050 0    60   Input ~ 0
-Lo Drv 1:3
+Lo Drv 2:4
 Wire Wire Line
 	7825 2750 7775 2750
 Wire Wire Line
@@ -546,10 +386,10 @@ Wire Wire Line
 Wire Wire Line
 	6925 3050 6975 3050
 $Comp
-L GND #PWR032
+L GND #PWR026
 U 1 1 5110C49B
 P 7775 2425
-F 0 "#PWR032" H 7775 2425 30  0001 C CNN
+F 0 "#PWR026" H 7775 2425 30  0001 C CNN
 F 1 "GND" H 7775 2355 30  0001 C CNN
 	1    7775 2425
 	1    0    0    -1  
@@ -564,9 +404,9 @@ F 1 "1k" V 7225 2125 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 Text HLabel 7825 1825 2    60   Output ~ 0
-CC 1:2
+CC 2:3
 Text HLabel 6925 2125 0    60   Input ~ 0
-Lo Drv 1:2
+Lo Drv 2:3
 Wire Wire Line
 	7825 1825 7775 1825
 Wire Wire Line
@@ -737,10 +577,10 @@ F 1 "1k" V 4150 6975 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR033
+L GND #PWR027
 U 1 1 5110BA69
 P 4700 7300
-F 0 "#PWR033" H 4700 7300 30  0001 C CNN
+F 0 "#PWR027" H 4700 7300 30  0001 C CNN
 F 1 "GND" H 4700 7230 30  0001 C CNN
 	1    4700 7300
 	1    0    0    -1  
@@ -777,10 +617,10 @@ F 1 "1k" V 4150 5300 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR034
+L GND #PWR028
 U 1 1 5110BA60
 P 4700 5625
-F 0 "#PWR034" H 4700 5625 30  0001 C CNN
+F 0 "#PWR028" H 4700 5625 30  0001 C CNN
 F 1 "GND" H 4700 5555 30  0001 C CNN
 	1    4700 5625
 	1    0    0    -1  
@@ -817,10 +657,10 @@ F 1 "1k" V 4150 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR035
+L GND #PWR029
 U 1 1 5110BA58
 P 4700 3875
-F 0 "#PWR035" H 4700 3875 30  0001 C CNN
+F 0 "#PWR029" H 4700 3875 30  0001 C CNN
 F 1 "GND" H 4700 3805 30  0001 C CNN
 	1    4700 3875
 	1    0    0    -1  
@@ -857,10 +697,10 @@ F 1 "1k" V 4150 1825 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR036
+L GND #PWR030
 U 1 1 5110BA4A
 P 4700 2150
-F 0 "#PWR036" H 4700 2150 30  0001 C CNN
+F 0 "#PWR030" H 4700 2150 30  0001 C CNN
 F 1 "GND" H 4700 2080 30  0001 C CNN
 	1    4700 2150
 	1    0    0    -1  
@@ -897,10 +737,10 @@ F 1 "1k" V 1475 6975 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR037
+L GND #PWR031
 U 1 1 5110BA38
 P 2025 7300
-F 0 "#PWR037" H 2025 7300 30  0001 C CNN
+F 0 "#PWR031" H 2025 7300 30  0001 C CNN
 F 1 "GND" H 2025 7230 30  0001 C CNN
 	1    2025 7300
 	1    0    0    -1  
@@ -937,10 +777,10 @@ F 1 "1k" V 1475 5300 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR038
+L GND #PWR032
 U 1 1 5110BA28
 P 2025 5625
-F 0 "#PWR038" H 2025 5625 30  0001 C CNN
+F 0 "#PWR032" H 2025 5625 30  0001 C CNN
 F 1 "GND" H 2025 5555 30  0001 C CNN
 	1    2025 5625
 	1    0    0    -1  
@@ -977,10 +817,10 @@ F 1 "1k" V 1475 3550 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR039
+L GND #PWR033
 U 1 1 5110B9E6
 P 2025 3875
-F 0 "#PWR039" H 2025 3875 30  0001 C CNN
+F 0 "#PWR033" H 2025 3875 30  0001 C CNN
 F 1 "GND" H 2025 3805 30  0001 C CNN
 	1    2025 3875
 	1    0    0    -1  
@@ -1010,9 +850,9 @@ Text GLabel 1800 2650 0    60   Input ~ 0
 Text GLabel 1800 925  0    60   Input ~ 0
 12V
 Text HLabel 6925 1225 0    60   Input ~ 0
-Lo Drv 1:1
+Lo Drv 2:1
 Text HLabel 7825 925  2    60   Output ~ 0
-CC 1:1
+CC 2:1
 Text HLabel 1125 1825 0    60   Input ~ 0
 Hi Drv A
 $Comp
@@ -1034,10 +874,10 @@ F 1 "40k" V 2025 1175 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR040
+L GND #PWR034
 U 1 1 510A145B
 P 2025 2150
-F 0 "#PWR040" H 2025 2150 30  0001 C CNN
+F 0 "#PWR034" H 2025 2150 30  0001 C CNN
 F 1 "GND" H 2025 2080 30  0001 C CNN
 	1    2025 2150
 	1    0    0    -1  
@@ -1052,10 +892,10 @@ F 1 "1k" V 7225 1225 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR041
+L GND #PWR035
 U 1 1 510A1458
 P 7775 1525
-F 0 "#PWR041" H 7775 1525 30  0001 C CNN
+F 0 "#PWR035" H 7775 1525 30  0001 C CNN
 F 1 "GND" H 7775 1455 30  0001 C CNN
 	1    7775 1525
 	1    0    0    -1  
