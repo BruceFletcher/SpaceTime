@@ -1,3 +1,11 @@
 -cache.lib
 *.bak
 *.bck
+sw/avr
+sw/*.o
+sw/*.bin
+sw/*.elf
+sw/*.hex
+sw/*.lst
+sw/*.map
+sw/*.srec
