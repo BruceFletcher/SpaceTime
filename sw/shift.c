@@ -38,23 +38,23 @@ void shift_byte(unsigned char c)
   }
 }
 
-void shift_out(unsigned char first_byte, unsigned char second_byte)
+void shift_out(unsigned char digit_select, unsigned char segment_select)
 {
-  shift_byte(first_byte);
-  shift_byte(second_byte);
+  shift_byte(digit_select);
+  shift_byte(segment_select);
 
   PORTC &= ~(1<<PORTC0);  // STCP lo
   PORTC |=  (1<<PORTC0);  // STCP hi
 }
 
-void shift_output_enable(char first_byte, char second_byte)
+void shift_output_enable(char digit_enable, char segment_enable)
 {
-  if (first_byte)
+  if (digit_enable)
     PORTB &= ~(1<<PORTB2);    // OE_BAR lo
   else
     PORTB |= (1<<PORTB2);     // OE_BAR hi
 
-  if (second_byte)
+  if (segment_enable)
     PORTB &= ~(1<<PORTB1);    // OE_BAR lo
   else
     PORTB |= (1<<PORTB1);     // OE_BAR hi

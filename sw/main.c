@@ -21,16 +21,15 @@ int main(void)
   shift_init();
   timer_init(0);
   display_init();
+  keypad_init();
 
-  shift_out(0, 0);
-  shift_output_enable(1, 1);
-
-  printf("\n*** BOOTED ***\nSpaceTime, yay!\n");
+  printf("\r\n*** BOOTED ***\r\nSpaceTime, yay!\r\n");
 
   sei();  // enable interrupts
 
   while(1)
   {
+    // Serial echo
     if (uart_haschar())
     {
       c = uart_getchar();
@@ -38,10 +37,14 @@ int main(void)
       uart_putchar(c, 0);
     }
 
-    if (current_time.ts.second & 1)
-      shift_out(0xff, 0xff);
-    else
-      shift_out(0, 0);
+    display_update();
+
+    if (keypad.is_valid)
+    {
+      keypad.is_valid = 0;
+
+      printf("%d\n", (int)keypad.keypress);
+    }
   }
 }
 

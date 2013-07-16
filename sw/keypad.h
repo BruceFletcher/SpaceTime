@@ -24,7 +24,7 @@ typedef struct
 } keypad_t;
 
 /**
- * This data is debounced and set by this module, but the consumer can
+ * This data is debounced and set by the keypad module, but main() can
  * clear the is_valid flag once a keypress is consumed.  It will only
  * be set again if a new keypress is detected.
  */
@@ -37,6 +37,9 @@ void keypad_init();
 
 /**
  * Called from the display driver to detect keypresses.
+ *
+ * 'row' should be 0 to 3, indicating which row of the
+ * keypad is being scanned, bottom to top.
  */
-void keypad_scan(char row);
+void keypad_scan(unsigned char row);
 

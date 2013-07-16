@@ -9,8 +9,8 @@
 void shift_init();
 
 // take two bytes and shift them out - low bit to Q7, high bit to Q0.
-void shift_out(unsigned char first_byte, unsigned char second_byte);
+void shift_out(unsigned char digit_select, unsigned char segment_select);
 
 // 0 tri-states a shift register, 1 enables output.
-void shift_output_enable(char first_byte, char second_byte);
+void shift_output_enable(char digit_output, char segment_output);
 

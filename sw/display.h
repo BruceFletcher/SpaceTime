@@ -19,10 +19,11 @@ typedef struct
   char underbar[4];             // non-zero to underbar a digit
 } display_t;
 
-
-extern char      segment;       // 0 to 7 depending on the segment being driven
-                                // (for the keypad driver)
+/**
+ * Set this from main() to contain whatever you want displayed.
+ */
 extern display_t display[2];
+
 
 /**
  * Initialize display data structures and interrupt handling.
