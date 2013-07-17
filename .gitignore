@@ -1,6 +1,7 @@
 -cache.lib
 *.bak
 *.bck
+*.swp
 sw/avr
 sw/*.o
 sw/*.bin
