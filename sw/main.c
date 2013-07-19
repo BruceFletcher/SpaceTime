@@ -13,6 +13,22 @@
 #include "keypad.h"
 
 
+void prepare_time(display_row_t *display, const timestamp_t *timestamp)
+{
+if (1 || (current_time.ts.second & 1))
+{
+  display->digit[0].value = (timestamp->hour > 9 ? timestamp->hour / 10 : DISPLAY_CHAR_SPACE);
+  display->digit[1].value = timestamp->hour % 10;
+  display->digit[2].value = timestamp->minute / 10;
+  display->digit[3].value = timestamp->minute % 10;
+} else {
+  display->digit[0].value = DISPLAY_CHAR_SPACE;
+  display->digit[1].value = DISPLAY_CHAR_SPACE;
+  display->digit[2].value = DISPLAY_CHAR_SPACE;
+  display->digit[3].value = DISPLAY_CHAR_SPACE;
+}
+}
+
 int main(void)
 {
   char c;
@@ -24,6 +40,8 @@ int main(void)
   keypad_init();
 
   printf("\r\n*** BOOTED ***\r\nSpaceTime, yay!\r\n");
+
+  prepare_time(&display_buffer[1], &closing_time.ts);
 
   sei();  // enable interrupts
 
@@ -37,13 +55,15 @@ int main(void)
       uart_putchar(c, 0);
     }
 
+    prepare_time(&display_buffer[0], &current_time.ts);
+
     display_update();
 
     if (keypad.is_valid)
     {
       keypad.is_valid = 0;
 
-      printf("%d\n", (int)keypad.keypress);
+      printf("%d\r\n", keypad.keypress);
     }
   }
 }
