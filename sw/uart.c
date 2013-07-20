@@ -83,12 +83,12 @@ ISR(USART_RX_vect)
 
   if (next != uart_rlast)
   {
-    uart_rbuf[next] = c;
+    uart_rbuf[uart_rnext] = c;
     uart_rnext = next;
   }
 }
 
-inline char uart_haschar()
+char uart_haschar()
 {
   return (uart_rnext != uart_rlast);
 }
