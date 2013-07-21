@@ -22,13 +22,13 @@ typedef struct
 typedef enum
 {
   NORMAL = 1,
-  LIGHTNING = 2
+  COUNTDOWN = 2
 } timer_mode_t;
 
 extern timer_t current_time;
 extern timer_t closing_time;
 extern timer_t cleanup_time;
-extern timer_t lightning_time;
+extern timer_t countdown_time;
 
 extern timer_mode_t timer_mode;
 
@@ -46,4 +46,9 @@ void timer_init(const timestamp_t *time);
  * believed_accurate to a non-zero value.
  */
 void timer_set(const timestamp_t *new_time, char believed_accurate);
+
+/**
+ * Parse a hh:mm:ss.cc time into *time, returning the # of characters matched.
+ */
+unsigned char timer_parse(timestamp_t *time, const char *string, char string_len);
 

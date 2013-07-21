@@ -6,7 +6,7 @@
 #
 
 PRG            = spacetime
-OBJ            = main.o uart.o shift.o timer.o display.o keypad.o
+OBJ            = main.o uart.o shift.o timer.o display.o keypad.o serial.o
 PROGRAMMER     = avrisp2
 PORT           = usb
 MCU_TARGET     = atmega328p

@@ -26,13 +26,15 @@ static display_row_t current_display[DISPLAY_ROW_COUNT];
  * Subscripts are:
  *
  * 2 - alternate views updated once per second, using timer.h's current_time.ts.second
- * 4 - A loop of 4 states, for brightness control
+ * 4 - A loop of 4 states, for brightness control (just cycled, POV-style)
  * 8 - Per-segment selector for which digits to enable
  */
-static unsigned char output_buffer[2][4][8];
+typedef unsigned char output_state_t[4][8];
+
+static output_state_t output_buffer[2];
 
 /**
- * Counter for brightness control, should be 0-3, updated after each segment loop
+ * Counter for brightness control, should be 0-3, updated after each loop through 8 segments
  */
 static unsigned char digit_brightness_counter;
 
@@ -83,6 +85,15 @@ void display_init()
 
 
 /**
+ * Per-digit brightness is implemented by duplicating digits through up to 4 per-segment
+ * digit buffers; essentially a static POV system.
+ */
+static void do_brightness_duplications(output_state_t *buffer, unsigned char brightness_index)
+{
+  // Todo: implement brightness duplication, probably as a mask & copy operation
+}
+
+/**
  * Called from display_update() whenever a change is made to the display_buffer.
  *
  * This function pre-calculates an array of bytes that are shifted out for the
@@ -109,6 +120,14 @@ static void update_digit_sequence()
       }
     }
   }
+
+  // For per-second blinking, first lighting sequence is essentially the same.
+  memcpy(&output_buffer[1][0], &output_buffer[0][0], 8*sizeof(char));
+
+  do_brightness_duplications(&output_buffer[0], 0);
+  do_brightness_duplications(&output_buffer[1], 1);
+
+  // Todo: implement underbar and hh:mm separator dots
 }
 
 /**

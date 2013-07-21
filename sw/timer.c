@@ -2,7 +2,9 @@
  * Timer functions for SpaceTime project
  */
 
+#include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 #include <avr/interrupt.h>
 #include "timer.h"
 
@@ -26,6 +28,7 @@ typedef struct
 timer_t current_time;
 timer_t closing_time;
 timer_t cleanup_time;
+timer_t countdown_time;
 
 static drift_correction_t drift_correction;
 
@@ -247,4 +250,62 @@ void timer_set(const timestamp_t *new_time, char believed_accurate)
     }
   }
 }
+
+/**
+ * Parse a hh:mm[:ss[.cc]] time into *time, returning the # of characters matched.
+ */
+unsigned char timer_parse(timestamp_t *time, const char *string, char string_len)
+{
+  unsigned char match_len = 0;
+  unsigned int i, j;
+
+  memset(time, 0, sizeof(timestamp_t));
+
+  if (string_len >= 5)  // hh:mm
+  {
+    if (isdigit(string[0]) && isdigit(string[1]) && string[2] == ':' &&
+        isdigit(string[3]) && isdigit(string[4]))
+    {
+      sscanf(string, "%u:%u", &i, &j);
+
+      if (i < 24 && j < 60)
+      {
+        time->hour = i;
+        time->minute = j;
+        match_len = 5;
+
+        if (string_len >= 8)  // hh:mm:ss
+        {
+          if (string[5] == ':' && isdigit(string[6]) && isdigit(string[7]))
+          {
+            sscanf(&string[6], "%u", &i);
+
+            if (i < 60)
+            {
+              time->second = i;
+              match_len = 8;
+
+              if (string_len == 11)
+              {
+                if (string[8] == '.' && isdigit(string[9]) && isdigit(string[10]))
+                {
+                  sscanf(&string[9], "%u", &i);
+
+                  if (i < 100)
+                  {
+                    time->cent = i;
+                    match_len = 11;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return match_len;
+}
+
 
