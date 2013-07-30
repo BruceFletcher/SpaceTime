@@ -11,6 +11,17 @@
 
 
 /**
+ * Running full out, the high-side mosfet drivers aren't able to turn off quickly enough.
+ * The result is 'off' segments that look half-on.  Slowing down the scanning rate by
+ * a factor of 32 doesn't seem to introduce any significant flicker to the display, but
+ * does allow the off segments to look more like they're off.  Good enough.
+ */
+#if 1
+#define SLOW_LOOP
+#endif
+
+
+/**
  * This is set from main() (or somewhere else) to indicate what characters to display.
  */
 display_row_t display_buffer[DISPLAY_ROW_COUNT];
@@ -50,21 +61,21 @@ static unsigned char segment_loop_counter;
  */
 static const unsigned char character_map[] =
 {
-  0xfc,  // 0
-  0x60,  // 1
-  0xda,  // 2
-  0xf2,  // 3
+  0x3f,  // 0
+  0x06,  // 1
+  0x5b,  // 2
+  0x4f,  // 3
   0x66,  // 4
-  0xbc,  // 5
-  0xbe,  // 6
-  0xe0,  // 7
-  0xfe,  // 8
-  0xe6,  // 9
+  0x6d,  // 5
+  0x7c,  // 6
+  0x07,  // 7
+  0x7f,  // 8
+  0x67,  // 9
   0x00,  // space
-  0x10,  // underscore
-  0x02,  // dash
-  0xbc,  // S
-  0x6e   // H
+  0x08,  // underscore
+  0x40,  // dash
+  0x6d,  // S
+  0x76   // H
 };
 
 
@@ -76,7 +87,9 @@ void display_init()
   shift_out(0, 0);
   shift_output_enable(1, 1);
 
+#ifdef SLOW_LOOP
   segment_loop_counter = -1;
+#endif
   digit_brightness_counter = -1;
 
   memset(display_buffer, 0, sizeof(display_buffer));
@@ -113,7 +126,7 @@ static void update_digit_sequence()
       character = character_map[display_buffer[row].digit[digit].value];
       d_mask = (1 << (row*4+digit));
 
-      for (segment=1; segment<8; ++segment)
+      for (segment=0; segment<7; ++segment)
       {
         if (character & (1<<segment))
           output_buffer[0][0][segment] |= d_mask;
@@ -140,29 +153,35 @@ void display_update()
 {
   unsigned char segment;
   unsigned char digit;
-char updated = 0;
 
   if (memcmp(display_buffer, current_display, sizeof(display_buffer)))
-{
     update_digit_sequence();
-updated = 1;
-}
 
+#ifdef SLOW_LOOP
+  ++segment_loop_counter;
+#else
   if (++segment_loop_counter > 7)
     segment_loop_counter = 0;
+#endif
 
   if (++digit_brightness_counter > 3)
     digit_brightness_counter = 0;
 
+#ifdef SLOW_LOOP
+  segment = (1<<(segment_loop_counter>>5));
+  digit = output_buffer[0][0][segment_loop_counter>>5];
+#else
   segment = (1<<segment_loop_counter);
-
   digit = output_buffer[0][0][segment_loop_counter];
-if (updated)
-printf("%x\r\n", digit);
+#endif
 
   shift_out(digit, segment);
 
+#ifdef SLOW_LOOP
+  // todo: figure out keypad scan for slow display loop
+#else
   if (segment_loop_counter < 4)
     keypad_scan(segment_loop_counter);
+#endif
 }
 
