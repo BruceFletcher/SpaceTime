@@ -52,3 +52,10 @@ void timer_set(const timestamp_t *new_time, char believed_accurate);
  */
 unsigned char timer_parse(timestamp_t *time, const char *string, char string_len);
 
+/**
+ * Beep for a specified period of time.
+ *
+ * Beep length should not exceed 100, or 1 second.
+ */
+void timer_beep(unsigned char centiseconds);
+

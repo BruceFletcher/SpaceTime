@@ -28,6 +28,16 @@ typedef enum
 } display_char_t;
 
 /**
+ * Control whether the mm:ss separator is on, off or blinking
+ */
+typedef enum
+{
+  DISPLAY_SEPARATOR_OFF = 0,
+  DISPLAY_SEPARATOR_ON,
+  DISPLAY_SEPARATOR_BLINK
+} display_separator_t;
+
+/**
  * Control structure for one character of a 7-segment display.
  */
 typedef struct
@@ -43,6 +53,7 @@ typedef struct
 typedef struct
 {
   display_digit_control_t digit[4];
+  display_separator_t separator;
 } display_row_t;
 
 /**
@@ -55,6 +66,15 @@ extern display_row_t display_buffer[DISPLAY_ROW_COUNT];
  * Initialize display data structures and interrupt handling.
  */
 void display_init();
+
+
+/**
+ * Initialize a two-row display buffer.
+ *
+ * Everything is set to a constant brightness, with no blinking.
+ */
+void display_buffer_initialize(display_row_t *buffer, char brightness);
+
 
 /**
  * Call this frequently from the main loop to drive the display.

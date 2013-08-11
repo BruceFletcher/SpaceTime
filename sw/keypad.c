@@ -166,7 +166,7 @@ void keypad_scan(unsigned char row)
         if (key != -1)
         {
           // number of keypad cycles we'll be in the debounce state:
-          debounce_count = 30;
+          debounce_count = 5;
           keypad_state = DEBOUNCING;
 
           keypad.keypress = key;

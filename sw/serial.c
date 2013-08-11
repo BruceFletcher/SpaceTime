@@ -1,5 +1,9 @@
 /**
- * Serial command support.
+ * Serial communication support.
+ *
+ * This module uses the serial port interface exposed by serial.h to
+ * communicate with a host computer.  The host can query and set
+ * times and other features using a Hayes modem-style AT command set.
  */
 
 #include <stdio.h>
@@ -115,7 +119,7 @@ static void process_buffer()
 
     printf("  AT? - display this help\r\n");
     printf("  ATSTn? - display time: n=0 - current, 1 - closing, 2 - cleanup, 3 - countdown\r\n");
-    printf("  ATSTn=hh:mm:ss.cc set a time - .cc is 100ths of a second, optional\r\n");
+    printf("  ATSTn=hh:mm[:ss[.cc]] set a time - .cc is 100ths of a second\r\n");
     printf("\r\nFor drift correction, set time with .cc twice, at least 1 hr apart.\r\n");
   }
   else

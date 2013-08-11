@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <avr/io.h>
 #include <avr/interrupt.h>
 #include "timer.h"
 
@@ -36,6 +37,7 @@ static __uint24 current_time_minutes_running;
 static char current_time_believed_accurate;
 
 static unsigned char timer_loop_count;
+static unsigned char beep_loop_count;
 
 
 void timer_init(const timestamp_t *time)
@@ -46,6 +48,9 @@ void timer_init(const timestamp_t *time)
 
   TIMSK0 &= ~(1 << TOIE0);  // Disable timer overflow interrupt
   TCCR0B |= (1 << CS02);    // Configure timer for F_CPU / 256
+
+  PORTD &= ~(1<<PORTD2);     // Piezo driver, init output lo
+  DDRD |= (1<<DDD2);        // Output enable for piezo driver pin
 
   if (time == 0)
   {
@@ -85,6 +90,8 @@ void timer_init(const timestamp_t *time)
   closing_time.is_set = 0;
   cleanup_time.is_set = 0;
   current_time_minutes_running = 0;
+
+  beep_loop_count = 0;
 }
 
 
@@ -157,6 +164,16 @@ ISR(TIMER0_OVF_vect)
       }
     }
   }
+
+  if (beep_loop_count > 0)
+  {
+    --beep_loop_count;
+
+    if (beep_loop_count == 0)
+    {
+      PORTD &= ~(1<<PORTD2);     // Turn off the beep
+    }
+  }
 }
 
 /**
@@ -215,6 +232,7 @@ static char timer_compare(const timestamp_t *this, const timestamp_t *that)
 
 static void timer_subtract(const timestamp_t *this, timestamp_t *from_this)
 {
+  // todo: implement timer subtraction
 }
 
 void timer_set(const timestamp_t *new_time, char believed_accurate)
@@ -248,6 +266,8 @@ void timer_set(const timestamp_t *new_time, char believed_accurate)
     {
       timer_subtract(&old_time, &diff_time);
     }
+
+    // todo: finish implementing drift calculation
   }
 }
 
@@ -308,4 +328,17 @@ unsigned char timer_parse(timestamp_t *time, const char *string, char string_len
   return match_len;
 }
 
+/**
+ * Beep for a specified period of time.
+ *
+ * Beep length will overflow if it's too large; best to keep to 100 or so max.
+ */
+void timer_beep(unsigned char centiseconds)
+{
+  unsigned int temp = centiseconds * LOOPS_PER_SECOND;
+
+  beep_loop_count = temp / 100;
+
+  PORTD |= (1<<PORTD2);     // Start the beep.
+}
 

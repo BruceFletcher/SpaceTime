@@ -21,6 +21,10 @@
 #endif
 
 
+#define display_separator_blink(s) ((s)==DISPLAY_SEPARATOR_BLINK ? 1 : 0)
+#define display_separator_mask(s, mask) ((s)!=DISPLAY_SEPARATOR_OFF ? (mask) : 0)
+
+
 /**
  * This is set from main() (or somewhere else) to indicate what characters to display.
  */
@@ -98,12 +102,83 @@ void display_init()
 
 
 /**
+ * Initialize a two-row display buffer.
+ *
+ * Everything is set to a constant brightness, with no blinking.
+ */
+void display_buffer_initialize(display_row_t *buffer, char brightness)
+{
+  unsigned char row, digit;
+
+  memset(buffer, 0, sizeof(display_row_t)*2);
+
+  for (row=0; row<2; ++row)
+  {
+    for (digit=0; digit<4; ++digit)
+    {
+      buffer[row].digit[digit].brightness[0]=brightness;
+      buffer[row].digit[digit].brightness[1]=brightness;
+    }
+  }
+}
+
+
+/**
  * Per-digit brightness is implemented by duplicating digits through up to 4 per-segment
  * digit buffers; essentially a static POV system.
+ *
+ * Output state 0 is already filled in, we need to copy states 1-3 based on
+ * display_buffer[row].digit[n].brightness[brightness_index].
  */
 static void do_brightness_duplications(output_state_t *buffer, unsigned char brightness_index)
 {
-  // Todo: implement brightness duplication, probably as a mask & copy operation
+  unsigned char cycle, row, digit, segment, mask;
+
+  for (cycle=1; cycle<4; ++cycle)
+  {
+    mask = 0;
+
+    for (row=0; row<2; ++row)
+    {
+      for (digit=0; digit<4; ++digit)
+      {
+        if (current_display[row].digit[digit].brightness[brightness_index] >= cycle)
+          mask |= (1<<(row*4+digit));
+      }
+    }
+
+    for (segment=0; segment<8; ++segment)
+    {
+      (*buffer)[cycle][segment] = (*buffer)[0][segment] & mask;
+    }
+  }
+}
+
+/**
+ * Set a segment in the output buffer to a given brightness and blink value.
+ *
+ * This can be used to override a segment (e.g. for underbar) or add decimal
+ * points for min:sec separation.  Or anything, really.
+ */
+static void stuff_segment(unsigned char segment, char blink, char brightness, unsigned char digit_mask)
+{
+  unsigned char blink_cycle, brightness_cycle, mask;
+
+  for (blink_cycle=0; blink_cycle<2; ++blink_cycle)
+  {
+    if (blink_cycle==0 || !blink)
+      mask = digit_mask;
+    else
+      mask = 0;
+
+    for (brightness_cycle=0; brightness_cycle<4; ++brightness_cycle)
+    {
+      if (mask && brightness_cycle < brightness)
+        output_buffer[blink_cycle][brightness_cycle][segment] |= digit_mask;
+      else
+        output_buffer[blink_cycle][brightness_cycle][segment] &= ~digit_mask;
+    }
+  }
 }
 
 /**
@@ -114,12 +189,12 @@ static void do_brightness_duplications(output_state_t *buffer, unsigned char bri
  */
 static void update_digit_sequence()
 {
-  unsigned char row, digit, segment, character, d_mask;
+  unsigned char row, digit, segment, character, d_mask, blink;
 
   memset(output_buffer, 0, sizeof(output_buffer));
   memcpy(current_display, display_buffer, sizeof(current_display));
 
-  for (row=0; row<DISPLAY_ROW_COUNT; ++row)
+  for (row=0; row<2; ++row)
   {
     for (digit=0; digit<4; ++digit)
     {
@@ -137,10 +212,39 @@ static void update_digit_sequence()
   // For per-second blinking, first lighting sequence is essentially the same.
   memcpy(&output_buffer[1][0], &output_buffer[0][0], 8*sizeof(char));
 
-  do_brightness_duplications(&output_buffer[0], 0);
-  do_brightness_duplications(&output_buffer[1], 1);
+  // Copy the segment/digit data up to 3 times to set the brightness.
+  do_brightness_duplications(&output_buffer[0], 0);  // blink state 0
+  do_brightness_duplications(&output_buffer[1], 1);  // blink state 1
 
-  // Todo: implement underbar and hh:mm separator dots
+  // Set up mm:ss separators for time display.
+  blink = display_separator_blink(current_display[0].separator);
+  d_mask = display_separator_mask(current_display[0].separator, 0x06);
+  stuff_segment(7,        // segment (7=decimal point)
+                blink,    // blink (0/1)
+                4,        // brightness, 0-4
+                d_mask);  // digit mask
+
+  blink = display_separator_blink(current_display[1].separator);
+  d_mask = display_separator_mask(current_display[1].separator, 0x60);
+  stuff_segment(7,        // segment (7=decimal point)
+                blink,    // blink (0/1)
+                4,        // brightness, 0-4
+                d_mask);  // digit mask
+
+  for (row=0; row<2; ++row)
+  {
+    for (digit=0; digit<4; ++digit)
+    {
+      if (current_display[row].digit[digit].underbar)
+      {
+        d_mask = (1<<(row*4+digit));
+        stuff_segment(3,        // segment (3=segment D, bottom)
+                      1,        // blink (0/1)
+                      4,        // brightness, 0-4
+                      d_mask);  // digit mask
+      }
+    }
+  }
 }
 
 /**
@@ -153,32 +257,47 @@ void display_update()
 {
   unsigned char segment;
   unsigned char digit;
+  unsigned char tick;
+#ifdef SLOW_LOOP
+  unsigned char keyscan;
+  static unsigned char last_keyscan = 255;
+#endif
 
   if (memcmp(display_buffer, current_display, sizeof(display_buffer)))
     update_digit_sequence();
 
 #ifdef SLOW_LOOP
   ++segment_loop_counter;
+
+  if (++digit_brightness_counter > 31)
+    digit_brightness_counter = 0;
 #else
   if (++segment_loop_counter > 7)
     segment_loop_counter = 0;
-#endif
 
   if (++digit_brightness_counter > 3)
     digit_brightness_counter = 0;
+#endif
+
+  tick = current_time.ts.second & 1;
 
 #ifdef SLOW_LOOP
   segment = (1<<(segment_loop_counter>>5));
-  digit = output_buffer[0][0][segment_loop_counter>>5];
+  digit = output_buffer[tick][digit_brightness_counter>>3][segment_loop_counter>>5];
 #else
   segment = (1<<segment_loop_counter);
-  digit = output_buffer[0][0][segment_loop_counter];
+  digit = output_buffer[tick][digit_brightness_counter][segment_loop_counter];
 #endif
 
   shift_out(digit, segment);
 
 #ifdef SLOW_LOOP
-  // todo: figure out keypad scan for slow display loop
+  keyscan = segment_loop_counter>>5;
+  if (keyscan != last_keyscan && keyscan < 4)
+  {
+    last_keyscan = keyscan;
+    keypad_scan(keyscan);
+  }
 #else
   if (segment_loop_counter < 4)
     keypad_scan(segment_loop_counter);
