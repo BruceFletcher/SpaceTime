@@ -11,6 +11,7 @@
 #include <ctype.h>
 #include "uart.h"
 #include "timer.h"
+#include "clock.h"
 #include "serial.h"
 
 
@@ -72,6 +73,22 @@ static void report_time(const timer_t *time)
     printf("Not set\r\n");
 }
 
+static void clear_time(timer_t *time)
+{
+  if (time == &closing_time)
+  {
+    clock_clear_closing_time();
+    printf("OK\r\n");
+  }
+  else
+  {
+    printf("ERROR: Only closing time is clearable.\r\n");
+  }
+}
+
+/**
+ * Parse a time string and set one of the time buffers.
+ */
 static void set_time(timer_t *time, const char *buffer, unsigned char buffer_length)
 {
   timer_t tmp_time;
@@ -87,7 +104,12 @@ static void set_time(timer_t *time, const char *buffer, unsigned char buffer_len
       if (match_len >= 11)  // hh:mm:ss.cc
         accurate = 1;
 
-      timer_set(&tmp_time.ts, accurate);
+      clock_set_current_time(&tmp_time.ts, accurate);
+    }
+    else
+    if (time == &closing_time)
+    {
+      clock_set_closing_time(&tmp_time.ts);
     }
     else
     {
@@ -120,6 +142,7 @@ static void process_buffer()
     printf("  AT? - display this help\r\n");
     printf("  ATSTn? - display time: n=0 - current, 1 - closing, 2 - cleanup, 3 - countdown\r\n");
     printf("  ATSTn=hh:mm[:ss[.cc]] set a time - .cc is 100ths of a second\r\n");
+    printf("  ATSTn=x unset a time - intended fo clearing closing time\r\n");
     printf("\r\nFor drift correction, set time with .cc twice, at least 1 hr apart.\r\n");
   }
   else
@@ -136,7 +159,10 @@ static void process_buffer()
           break;
 
         case '=':  // ATSTn=hh:mm[:ss[.cc]]
-          set_time(time, &buffer[6], buffer_length-6);
+          if (buffer_length==7 && (buffer[6] == 'x' || buffer[6] == 'X'))
+            clear_time(time);
+          else
+            set_time(time, &buffer[6], buffer_length-6);
           break;
 
         default:

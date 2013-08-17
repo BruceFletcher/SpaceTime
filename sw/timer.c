@@ -17,6 +17,8 @@
                                                                // (225, including a full first loop on setup)
 
 
+static void timer_reset(const timestamp_t *time);
+
 typedef struct
 {
   char per_second;
@@ -40,17 +42,32 @@ static unsigned char timer_loop_count;
 static unsigned char beep_loop_count;
 
 
-void timer_init(const timestamp_t *time)
+/**
+ * Called once during system initialization to set up interrupts and memory structures.
+ */
+void timer_init()
 {
-  unsigned char initial_ticks;
-  unsigned char initial_loops;
-  int tmp;
-
   TIMSK0 &= ~(1 << TOIE0);  // Disable timer overflow interrupt
   TCCR0B |= (1 << CS02);    // Configure timer for F_CPU / 256
 
   PORTD &= ~(1<<PORTD2);     // Piezo driver, init output lo
   DDRD |= (1<<DDD2);        // Output enable for piezo driver pin
+
+  closing_time.is_set = 0;
+  cleanup_time.is_set = 0;
+
+  beep_loop_count = 0;
+
+  timer_reset(0);
+}
+
+static void timer_reset(const timestamp_t *time)
+{
+  unsigned char initial_ticks;
+  unsigned char initial_loops;
+  int tmp;
+
+  TIMSK0 &= ~(1 << TOIE0);  // Disable timer overflow interrupt while we set up
 
   if (time == 0)
   {
@@ -87,11 +104,7 @@ void timer_init(const timestamp_t *time)
 
   TIMSK0 |= (1 << TOIE0);  // Enable timer overflow interrupt
 
-  closing_time.is_set = 0;
-  cleanup_time.is_set = 0;
   current_time_minutes_running = 0;
-
-  beep_loop_count = 0;
 }
 
 
@@ -246,7 +259,7 @@ void timer_set(const timestamp_t *new_time, char believed_accurate)
 
   if (!believed_accurate || !current_time_believed_accurate)
   {
-    timer_init(new_time);
+    timer_reset(new_time);
     current_time_believed_accurate = believed_accurate;
   }
   else

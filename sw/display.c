@@ -124,6 +124,20 @@ void display_buffer_initialize(display_row_t *buffer, char brightness)
 
 
 /**
+ * Clear a display buffer row.
+ *
+ * Sets all four digits of one display row to blanks.
+ */
+void display_buffer_clear_row(display_row_t *buffer)
+{
+  unsigned char digit;
+
+  for (digit=0; digit<4; ++digit)
+    buffer->digit[digit].value = DISPLAY_CHAR_SPACE;
+}
+
+
+/**
  * Per-digit brightness is implemented by duplicating digits through up to 4 per-segment
  * digit buffers; essentially a static POV system.
  *

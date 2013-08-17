@@ -34,10 +34,8 @@ extern timer_mode_t timer_mode;
 
 /**
  * Initialize timer data structures and interrupt handling.
- *
- * Set *time = null to set up the counter in 'VCR blinking 12:00' mode.
  */
-void timer_init(const timestamp_t *time);
+void timer_init();
 
 /**
  * Set the current time from an external source.

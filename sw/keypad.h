@@ -43,3 +43,8 @@ void keypad_init();
  */
 void keypad_scan(unsigned char row);
 
+/**
+ * Called from the main loop to handle keypad input.
+ */
+void keypad_update();
+

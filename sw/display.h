@@ -77,6 +77,14 @@ void display_buffer_initialize(display_row_t *buffer, char brightness);
 
 
 /**
+ * Clear a display buffer row.
+ *
+ * Sets all four digits of one display row to blanks.
+ */
+void display_buffer_clear_row(display_row_t *buffer);
+
+
+/**
  * Call this frequently from the main loop to drive the display.
  */
 void display_update();
