@@ -60,19 +60,6 @@ static timer_t *select_time(char num)
   return time;
 }
 
-/**
- * Respond to an ATSTn? command by reporting the current, closing or cleanup time.
- */
-static void report_time(const timer_t *time)
-{
-  if (time->is_set)
-  {
-    printf("%02d:%02d:%02d\r\n", time->ts.hour, time->ts.minute, time->ts.second);
-  }
-  else
-    printf("Not set\r\n");
-}
-
 static void clear_time(timer_t *time)
 {
   if (time == &closing_time)
@@ -155,7 +142,7 @@ static void process_buffer()
       switch (buffer[5])
       {
         case '?':  // ATSTn?
-          report_time(time);
+          clock_echo_time(time);
           break;
 
         case '=':  // ATSTn=hh:mm[:ss[.cc]]
