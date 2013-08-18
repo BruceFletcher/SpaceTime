@@ -38,3 +38,17 @@ Once complete it should support:
 * Drift correction for the clock
 * A reasonably intuitive interface for setting times and general use
 
+Enclosure
+---------
+
+The enclosure is a laser cut box made from 5mm ply, primarily designed and built
+by Luke Closs - thanks Luke!  The basic box design was created with
+http://boxmaker.rahulbotics.com with the following parameters:
+
+* Width: 350mm
+* Height: 280mm
+* Depth: 60mm
+* Thickness: 5mm
+* Notch length: 12.5mm (automatic)
+* Cut width: 0.25mm
+
