@@ -8,6 +8,7 @@
 #include "shift.h"
 #include "keypad.h"
 #include "display.h"
+#include "watchdog.h"
 
 
 /**
@@ -89,7 +90,6 @@ static const unsigned char character_map[] =
 void display_init()
 {
   shift_out(0, 0);
-  shift_output_enable(1, 1);
 
 #ifdef SLOW_LOOP
   segment_loop_counter = -1;
@@ -269,6 +269,7 @@ static void update_digit_sequence()
  */
 void display_update()
 {
+  static unsigned char last_segment;
   unsigned char segment;
   unsigned char digit;
   unsigned char tick;
@@ -304,6 +305,19 @@ void display_update()
 #endif
 
   shift_out(digit, segment);
+
+  /*
+   * If the segment is regularly updating, we can safely enable the shift registers
+   * and tell the watchdog timer to restart its count.  This allows us to overdrive
+   * the display with more confidence that some firmware screwup isn't going to
+   * cook the display by sticking on one segment or another.
+   */
+  if (segment != last_segment)
+  {
+    last_segment = segment;
+    watchdog_tick();
+    shift_output_enable(1, 1);
+  }
 
 #ifdef SLOW_LOOP
   keyscan = segment_loop_counter>>5;

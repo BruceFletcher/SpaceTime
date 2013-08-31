@@ -60,3 +60,8 @@ void shift_output_enable(char digit_enable, char segment_enable)
     PORTB |= (1<<PORTB1);     // OE_BAR hi
 }
 
+void shift_disable(void)
+{
+  PORTB |= (1<<PORTB1) | (1<<PORTB2); // shut 'em down right quick
+}
+

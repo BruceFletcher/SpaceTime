@@ -2,7 +2,7 @@
  * UART (USART) support for stdout functions including printf()
  */
 
-#define UART_BAUDRATE      115200
+#define UART_BAUDRATE      57600
 
 /**
  * Call to initialize the UART at the start of main()

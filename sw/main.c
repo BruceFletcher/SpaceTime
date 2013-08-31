@@ -15,7 +15,18 @@
 #include "serial.h"
 #include "edit.h"
 #include "clock.h"
+#include "watchdog.h"
 
+
+/**
+ * Watchdog timeout function; disable the display and chirp a bit
+ * as a diagnostic.
+ */
+void oops(void)
+{
+  shift_disable();
+  timer_beep(5);
+}
 
 int main(void)
 {
@@ -27,6 +38,7 @@ int main(void)
   serial_init();
   edit_init();
   clock_init();
+  watchdog_init(WDTO_15MS, &oops);
 
   sei();  // enable interrupts
 
