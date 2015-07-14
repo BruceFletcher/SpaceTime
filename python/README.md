@@ -46,7 +46,7 @@ Navigate to the /usr/local/bin directory and perform Git Clone of this repo. The
 > git clone --no-checkout --depth=1 git://github.com/<YOUR_ACCOUNT>/SpaceTime
 > cd SpaceTime
 > git config core.sparsecheckout true
-> echo python/* > .git/info/sparse-checkout
+> echo python > .git/info/sparse-checkout
 > git checkout master
 ```
 The code should now be at /usr/local/bin/spacetime/python
