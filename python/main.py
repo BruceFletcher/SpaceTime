@@ -4,23 +4,22 @@ from spacetime import SpaceTime
 from vhsapi import VHSApi
 from timeutil import *
 
-dbg_showAllSerial = False #If true, prints out all received serial messages
-lastClockSync   = 0       #Time of last clock sync with SpaceTime
-api_var_door    = 'key'   #Should be 'door' when goes live
-api_var_closing = 'test1' #'open_until' or 'isvhsopen_until'
-api_var_ip      = 'spacetime_ip'
+dbg_showAllSerial = False  #If true, prints out all received serial messages
+lastClockSync   = 0        #Time of last clock sync with SpaceTime
+api_var_door    = 'door'   #Should be 'door' when goes live
+api_var_closing = 'isvhsopen_until' #Should be 'isvhsopen_until' when goes live
+api_var_ip      = 'spacetime_ip'    #RPi sends VHS API its local IP address
 max_clock_drift = 10 #Allowable error (in seconds) between SpaceTime clock and system clock
 
 def UpdateDoorStatus(vhsApi, closing_time):
   #Update VHSApi only if it's changed
   if closing_time == None:
     vhsApi.UpdateIfNecessary(api_var_door, 'closed')
-    vhsApi.UpdateIfNecessary(api_var_closing, 'closed')
+    vhsApi.UpdateIfNecessary(api_var_closing, '')
   else:
     vhsApi.UpdateIfNecessary(api_var_door, 'open')
-    #Removing seconds part, and replacing colons with underscores
-    #because VHS Api is currently ignoring most symbols.
-    closing_time = closing_time[:2] + '_' + closing_time[3:5]
+    #Removing seconds part from string in format HH:MM:SS
+    closing_time = 'until ' + closing_time[:5]
     vhsApi.UpdateIfNecessary(api_var_closing, closing_time)
     
 def ProcessSerialMsg(msg, vhsApi, st):
