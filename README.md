@@ -44,6 +44,8 @@ Once complete it should support:
 
 The [Raspberry Pi's code](python) is written in Python and is described more [here](python/README.md).
 
+See [bugs and to-do's](TODO.md) for remaining work.
+
 Enclosure
 ---------
 
