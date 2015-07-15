@@ -1,6 +1,9 @@
-Raspberry Pi username/password and local IP address are marked on the physical SpaceTime box. IP address is also on the Hackspace API as [spacetime_ip](http://api.hackspace.ca/s/vhs/data/spacetime_ip.txt). To connect to the Raspberry Pi from the local network, make sure you are on the same subnet by ensuring that spacetime_ip starts the same as your computer's IP. Then connect using any SSH client, such as putty, or the linux command line ssh.
+## SpaceTime - Python Overview
+The SpaceTime box contains a Raspberry Pi and a custom AVR-based PCB called [SpaceTime](../README.md). The Raspberry Pi runs a Python program that performs NTP time sync and facilitates network communication between SpaceTime and the [Hackspace API](http://api.hackspace.com).
 
-### Configuring Raspberry Pi from scratch
+The Raspberry Pi username/password and local IP address can be found on the physical SpaceTime box. IP address is also on the Hackspace API as [spacetime_ip](http://api.hackspace.ca/s/vhs/data/spacetime_ip.txt). To connect to the Raspberry Pi from the local network, make sure you are on the same subnet by ensuring that `spacetime_ip` starts the same as your computer's IP. Then connect using any SSH client, such as `putty` or the Linux command line `ssh`.
+
+## Configuring Raspberry Pi from scratch
 
 #### Install Python packages from command line
 
