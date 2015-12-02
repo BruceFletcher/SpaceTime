@@ -41,7 +41,7 @@ If Git is not installed:
 ```
 Create directory for the Python code:
 ```Shell
-> mkdir /usr/local/bin/spacetime
+> mkdir /usr/local/bin/SpaceTime
 ```
 Navigate to the `/usr/local/bin` directory and perform Git Clone of this repo. The following will download only the latest version of the `/SpaceTime/tree/master/python` folder:
 ```Shell
@@ -52,10 +52,10 @@ Navigate to the `/usr/local/bin` directory and perform Git Clone of this repo. T
 > echo python > .git/info/sparse-checkout
 > git checkout master
 ```
-The code should now be at `/usr/local/bin/spacetime/python`
+The code should now be at `/usr/local/bin/SpaceTime/python`
 In the future, to download the latest code from GitHub:
 ```Shell
-> cd /usr/local/bin/spacetime
+> cd /usr/local/bin/SpaceTime
 > git pull
 ```
 
@@ -64,7 +64,7 @@ Add to the end of `/etc/rc.local`
 ```Shell
 > sudo nano /etc/rc.local
 
-python /usr/local/bin/spacetime/python/main.py &
+python /usr/local/bin/SpaceTime/python/main.py &
 ```
 
 #### Configure VHS API variables
