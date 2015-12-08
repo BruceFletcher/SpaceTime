@@ -1,5 +1,5 @@
 ## SpaceTime - Python Overview
-The SpaceTime box contains a Raspberry Pi and a custom AVR-based PCB called [SpaceTime](../README.md). The Raspberry Pi runs a Python program that performs NTP time sync and facilitates network communication between SpaceTime and the [Hackspace API](http://api.hackspace.com).
+The SpaceTime box contains a Raspberry Pi and a custom AVR-based PCB called [SpaceTime](../README.md). The Raspberry Pi runs a Python program that performs NTP time sync and facilitates network communication between SpaceTime and both the [isvhsopen.com Web API](http://isvhsopen.com/api/status/) ([GitHub](https://github.com/vhs/isvhsopen)) and the [Hackspace API](http://api.hackspace.com) ([GitHub](https://github.com/vhs/api)). Communication with the Hackspace API is mostly deprecated in favour of the new isvhsopen Web API, but is still used to log the Raspberry Pi's local IP address.
 
 The Raspberry Pi username/password and local IP address can be found on the physical SpaceTime box. IP address is also on the Hackspace API as [spacetime_ip](http://api.hackspace.ca/s/vhs/data/spacetime_ip.txt). To connect to the Raspberry Pi from the local network, make sure you are on the same subnet by ensuring that `spacetime_ip` starts the same as your computer's IP. Then connect using any SSH client, such as `putty` or the Linux command line `ssh`.
 
@@ -34,7 +34,6 @@ If the date has drifted by more than 1000s, ntpd will not correct it by default.
 ```
 
 #### Installing SpaceTime from GitHub
-
 If Git is not installed:
 ```Shell
 > sudo apt-get install git-core
@@ -58,6 +57,7 @@ In the future, to download the latest code from GitHub:
 > cd /usr/local/bin/SpaceTime
 > git pull
 ```
+Note that you'll have to reapply the Web API Key after performing a ```git pull``` (see below).
 
 #### Make program run on startup
 Add to the end of `/etc/rc.local`
@@ -67,14 +67,23 @@ Add to the end of `/etc/rc.local`
 python /usr/local/bin/SpaceTime/python/main.py &
 ```
 
+#### Get isvhsopen Web API Key
+Refer to the [isvhsopen.com API on GitHub](https://github.com/vhs/isvhsopen) to obtain an API Key. Once obtained, run this command, replacing ```[Generated Key]``` with the actual API Key. HTTP POST commands to update the API will fail without a valid API Key.
+```Shell
+> cd /usr/local/bin/SpaceTime/python
+> sudo sed -i 's/ISVHSOPEN_API_KEY/[Generated Key]/g' webapi.py
+```
+Please do not push changes to GitHub that include the API Key. This key should only be stored locally on the Raspberry Pi.
+
 #### Configure VHS API variables
-Find and edit the Hackspace API variable names used at the top of `main.py`. Change them to match whatever is being displayed by http://www.isvhsopen.com.
+Find and edit the Hackspace API variable names used at the top of `main.py`. With the new isvhsopen.com API (independent of the Hackspace API), the only variable we still update directly on api.hackspace.ca is the one that stores the Raspberry Pi's local IP.
 
 #### Testing
 To run unit tests from command line:
 ```Shell
 > python -m unittest test_timeutil
 > python -m unittest test_vhsapi
+> python -m unittest test_webapi
 > python -m unittest test_spacetime
 ```
 

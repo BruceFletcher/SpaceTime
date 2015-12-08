@@ -25,7 +25,7 @@ class VHSApi:
     sleepAmt = .25
     sleepMax = 16
     while self.Query(dataname) == False:
-      print 'Waiting ' + str(sleepAmt) + 's for retry...'
+      print('Waiting ' + str(sleepAmt) + 's for retry...')
       sleep(sleepAmt)
       if sleepAmt < sleepMax:
         sleepAmt *= 2

@@ -1,28 +1,33 @@
 import time
 import socket
 from spacetime import SpaceTime
-from vhsapi import VHSApi
+from vhsapi import VHSApi #api.hackspace.ca
+from webapi import WebApi #isvhsopen.com/api/status/
 from timeutil import *
 
-dbg_showAllSerial = False  #If true, prints out all received serial messages
-lastClockSync   = 0        #Time of last clock sync with SpaceTime
-api_var_door    = 'door'   #Should be 'door' when goes live
-api_var_closing = 'isvhsopen_until' #Should be 'isvhsopen_until' when goes live
-api_var_ip      = 'spacetime_ip'    #RPi sends VHS API its local IP address
+dbg_showAllSerial = False #If true, prints out all received serial messages
+lastClockSync   = 0       #Time of last clock sync with SpaceTime
+lastHeartbeat   = 0       #Time of last update with isvhsopen.com WebApi
+doorStatus_cache= ''      #The last known door status, to send periodic heartbeat to WebApi
+api_var_ip      = 'spacetime_ip'
 max_clock_drift = 10 #Allowable error (in seconds) between SpaceTime clock and system clock
 
-def UpdateDoorStatus(vhsApi, closing_time):
-  #Update VHSApi only if it's changed
+def UpdateDoorStatus(webApi, closing_time):
+  #Save current time and door status to send periodic heartbeats to WebAPI
+  global lastHeartbeat, doorStatus_cache
+  lastHeartbeat = time.time()
+  doorStatus_cache = closing_time
+  #Update WebAPI with door status. WebAPI is smart enough
+  #to ignore duplicate submissions, so unnecessary updates
+  #aren't harmful and do not affect the timestamp.
   if closing_time == None:
-    vhsApi.UpdateIfNecessary(api_var_door, 'closed')
-    vhsApi.UpdateIfNecessary(api_var_closing, '')
+    webApi.Update('closed')
   else:
-    vhsApi.UpdateIfNecessary(api_var_door, 'open')
-    #Removing seconds part from string in format HH:MM:SS
-    closing_time = 'until ' + closing_time[:5]
-    vhsApi.UpdateIfNecessary(api_var_closing, closing_time)
+    #Removing seconds part
+    closing_time = closing_time[:5]
+    webApi.Update('open', closing_time)
     
-def ProcessSerialMsg(msg, vhsApi, st):
+def ProcessSerialMsg(msg, webApi, st):
   
   if msg.type == 'Current' or msg.type == 'AmbiguousTime':
     #SpaceTime is telling us what it thinks is the current time
@@ -52,16 +57,16 @@ def ProcessSerialMsg(msg, vhsApi, st):
     #we asked for it, or because it just expired.
     
     print('SpaceTime reports that Closing time is ' + ('not set' if msg.val == None else msg.val))
-    #Update VHSApi only if it's changed
-    UpdateDoorStatus(vhsApi, msg.val)
+    #Update WebAPI
+    UpdateDoorStatus(webApi, msg.val)
   elif msg.type == 'OK':
     return #Can ignore 'OK' responses
   elif msg.type == 'Echo':
     return #SpaceTime echoes all commands sent to it, so we can ignore these
   elif msg.type == 'Boot':
     print('SpaceTime has just been reset!')
-    print('Resetting VHS Api variables and setting SpaceTime\'s clock')
-    UpdateDoorStatus(vhsApi, None)
+    print('Resetting Web API variables and setting SpaceTime\'s clock')
+    UpdateDoorStatus(webApi, None)
     #Query SpaceTime's clock. Its response will trigger us to update it if necessary.
     st.GetTime(0)
     return
@@ -91,24 +96,30 @@ def ShouldSyncClock():
     if 40 < curTime.tm_sec < 50:
       return True
   return False
+  
+def ShouldSendHeartbeat():
+  #Send a heartbeat to isvhsopen.com every 15min
+  _15min = 900 #seconds in 15min
+  curTime = time.time()
+  return (curTime - lastHeartbeat > _15min)
 
 def setup():
   #Connects to the internet, updates local IP address 
   #on VHS Api, connects to SpaceTime Serial, updates
-  #VHS Api variables if necessary, and queries
-  #SpaceTime's clock (to trigger an update upon its response).
-  #returns initialized (VHSApi, SpaceTime)
+  #Web Api variables, and queries SpaceTime's clock
+  #(to trigger an update upon its response).
+  #returns initialized (WebAPI, SpaceTime)
   
   print('Initializing SpaceTime...')
   vhs = VHSApi()
+  web = WebApi()
   st = SpaceTime()
 
   print('Connecting to the internet...')
-  vhs.WaitForConnect(api_var_door)
+  web.WaitForConnect()
   print('Connected!')
   #Update the machine's local IP on the VHS Api. The timestamp can serve as a boot history.
-  #Replacing periods with dashes, because VHS Api is currently ignoring most symbols.
-  vhs.Update(api_var_ip, GetLocalIP().replace('.', '-'))
+  vhs.Update(api_var_ip, GetLocalIP())
   
   print('Initializing Serial connection with SpaceTime (' + st.serial.name + ')...')
   while not st.IsConnected():
@@ -123,14 +134,14 @@ def setup():
   #It is an unlabeled time, but we know it should be Closing time
   if ct.type == 'AmbiguousTime':
     ct.type = 'Closing'
-    #Update VHS Api if necessary
-    ProcessSerialMsg(ct, vhs, st)
+    #Update Web Api if necessary
+    ProcessSerialMsg(ct, web, st)
   
   #Query SpaceTime's clock. Its response will trigger us to update it if necessary.
   st.GetTime(0)  #Current time is ID 0
-  return vhs, st
+  return web, st
 
-def loop(vhs, st):
+def loop(web, st):
   #Check for new Serial messages every second.
   #If there is a Serial message to read, read and process it.
   if st.CanRead():
@@ -138,24 +149,27 @@ def loop(vhs, st):
     if dbg_showAllSerial:
       dbgmsg = 'SerialDbg ' + msg.type + ': ' + str(msg.val)
       print(dbgmsg if not dbgmsg.endswith('\r\n') else dbgmsg[:-2])
-    ProcessSerialMsg(msg, vhs, st)
+    ProcessSerialMsg(msg, web, st)
   elif ShouldSyncClock():
     #Query SpaceTime's clock. Its response will trigger us to update it if necessary.
     st.GetTime(0)
     #Give SpaceTime enough time to respond so that we only send one st.GetTime(0) per sync period.
     time.sleep(0.5)
+  elif ShouldSendHeartbeat():
+    print('Sending Heartbeat to Web API...')
+    UpdateDoorStatus(web, doorStatus_cache);
   else:
     time.sleep(1)
 
 def main():
   #Run setup and then loop indefinitely
-  vhs, st = setup()
+  web, st = setup()
   
   #Loop indefinitely - Catch and report any unhandled exceptions,
   #but try to keep going anyway.
   while 1:
     try:
-      loop(vhs, st)
+      loop(web, st)
     except Exception as e:
       print('Exception in main loop! ', e)
       #Give some time for whatever caused the error to go away.
