@@ -18,7 +18,7 @@ class SpaceTime:
     self.serial = serial.Serial(serialDeviceName, self.BAUD, timeout=1)
   
   def ClearSerial(self):
-    #Clear the local Serial buffers as wells as SpaceTime's buffer
+    #Clear the local Serial buffers as well as SpaceTime's buffer
     
     #Send a newline to ensure SpaceTime buffer is emptied
     self.serial.write(CRLF)
@@ -28,7 +28,7 @@ class SpaceTime:
     self.serial.flushInput() #Discard any data in the input buffer
     
   def CanRead(self):
-    #Checks wheter there is serial data waiting to be read from SpaceTime
+    #Checks whether there is serial data waiting to be read from SpaceTime
     return self.serial.inWaiting() > 0
     
   def IsConnected(self, timeout = 10, writedelay = 0.25):
