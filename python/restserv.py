@@ -1,4 +1,5 @@
 import web
+import threading
 from timeutil import *
 
 #SpaceTime object, defined when RestServ() is called
@@ -16,8 +17,15 @@ urls = (
 def RestServ(st):
   global spacetime
   spacetime = st
-  app = web.application(urls, globals())
-  app.run()
+  th = RestServThread()
+  th.daemon = True
+  th.start()
+
+#The web server runs in a thread so that app.run() doesn't block all other execution.
+class RestServThread(threading.Thread):
+  def run(self):
+    app = web.application(urls, globals())
+    app.run()
 
 class index:
   def GET(self):
