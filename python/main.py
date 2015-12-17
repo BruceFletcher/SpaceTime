@@ -3,6 +3,7 @@ import socket
 from spacetime import SpaceTime
 from vhsapi import VHSApi #api.hackspace.ca
 from webapi import WebApi #isvhsopen.com/api/status/
+from restserv import RestServ #Webserver for REST API to allow updates from the VHS network 
 from timeutil import *
 
 dbg_showAllSerial = False #If true, prints out all received serial messages
@@ -125,6 +126,9 @@ def setup():
   while not st.IsConnected():
     print('Failed to init Serial connection with SpaceTime. Trying again...')
   print('Initialized!')
+  
+  print('Initializing webserver for REST API (only available to LAN)')
+  RestServ(st)
   
   #Query Closing time (this is the only time we do this)
   #in case RPi was rebooted but SpaceTime wasn't.
