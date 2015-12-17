@@ -40,7 +40,7 @@ class TestWebApi(unittest.TestCase):
     #the update; we don't wait and then query to verify, but just trust it.
     v = WebApi()
     j = v.Update('open', '12:34')
-    self.assertTrue(j['status'] == 'open' and j['openUntil'].find('12:34:00') == 11)
+    self.assertTrue(j['status'] == 'open' and j['openUntil'].find('12:34:00') == 11) #TODO: Timezone is different server-side now, so this check fails
     j = v.Update('closed')
     self.assertTrue(j['status'] == 'closed' and j.get('openUntil') == None)
     
