@@ -29,12 +29,17 @@ def TimeOffsetSeconds(t1, t2):
   return diff
 
 def IsTimeStr( str ):
-  #Basic test for time-formatted string, returns True if format matches "dd:dd:dd"
-  #where d is any digit.
+  #Basic test for time-formatted string, returns True if format matches "HH:MM:SS"
+  #of a 24-hour formatted clock.
   if len(str) == 8 and ':' == str[2] == str[5]:
-    for i in [0, 1, 3, 4, 6, 7]:
+    for i in [0, 1, 4, 7]:
       if not '0' <= str[i] <= '9':
         return False
+    for i in [3, 6]: #10's digits cannot go above 5
+      if not '0' <= str[i] <= '5':
+        return False
+    if str[0] > '2' or (str[0] == '2' and str[1] > '3'): #24-hour clock's hour part must be < 24
+      return False
     return True
   return False
   
