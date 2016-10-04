@@ -9,8 +9,12 @@ displays.  The two rows are:
 * current time
 * closing time (i.e. when the night's responsible keyholding member is planning to leave)
 
-The clock is AVR based and intended to be hooked up to more network-capable systems over
-a serial link for display on http://isvhsopen.com or whatever else.
+The clock is AVR-based and communicates over a serial link with a Raspberry Pi, which performs 
+NTP time sync and updates variables on http://api.hackspace.com based on the clock's state.
+http://isvhsopen.com references the VHS API to display the open state and the closing time. 
+
+There is a separate readme for the [**Raspberry Pi setup instructions**](python/README.md) 
+and [Python scripts](python).
 
 Hardware design
 ---------------
@@ -37,6 +41,10 @@ Once complete it should support:
 * Serial I/O, probably with an AT style interface
 * Drift correction for the clock
 * A reasonably intuitive interface for setting times and general use
+
+The [Raspberry Pi's code](python) is written in Python and is described more [here](python/README.md).
+
+See [bugs and to-do's](TODO.md) for remaining work.
 
 Enclosure
 ---------
