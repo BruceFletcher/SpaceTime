@@ -1,7 +1,7 @@
 ## SpaceTime - Python Overview
-The SpaceTime box contains a Raspberry Pi and a custom AVR-based PCB called [SpaceTime](../README.md). The Raspberry Pi runs a Python program that performs NTP time sync and facilitates network communication between SpaceTime and both the [isvhsopen.com Web API](http://isvhsopen.com/api/status/) ([GitHub](https://github.com/vhs/isvhsopen)) and the [Hackspace API](http://api.hackspace.ca) ([GitHub](https://github.com/vhs/api)). Communication with the Hackspace API is mostly deprecated in favour of the new isvhsopen Web API, but is still used to log the Raspberry Pi's local IP address. A local web server also provides a REST interface on port 80 to change the status from within the VHS local network.
+The SpaceTime box contains a Raspberry Pi and a custom AVR-based PCB called [SpaceTime](../README.md). The Raspberry Pi runs a Python program that performs NTP time sync and facilitates network communication between SpaceTime and both the [isvhsopen.com Web API](http://isvhsopen.com/api/status/) ([GitHub](https://github.com/vhs/isvhsopen)) and the [Hackspace API](http://api.vanhack.ca) ([GitHub](https://github.com/vhs/api)). Communication with the Hackspace API is mostly deprecated in favour of the new isvhsopen Web API, but is still used to log the Raspberry Pi's local IP address. A local web server also provides a REST interface on port 80 to change the status from within the VHS local network.
 
-The Raspberry Pi username/password and local IP address can be found on the physical SpaceTime box. The device is also configured with hostname ```isvhsopen-spacetime```. IP address is also on the Hackspace API as [spacetime_ip](http://api.hackspace.ca/s/vhs/data/spacetime_ip.txt). To connect to the Raspberry Pi from the local network, make sure you are on the same subnet by ensuring that `spacetime_ip` starts the same as your computer's IP. Then connect using any SSH client, such as `putty` or the Linux command line `ssh`.
+The Raspberry Pi username/password and local IP address can be found on the physical SpaceTime box. The device is also configured with hostname ```isvhsopen-spacetime```. IP address is also on the Hackspace API as [spacetime_ip](http://api.vanhack.ca/s/vhs/data/spacetime_ip.txt). To connect to the Raspberry Pi from the local network, make sure you are on the same subnet by ensuring that `spacetime_ip` starts the same as your computer's IP. Then connect using any SSH client, such as `putty` or the Linux command line `ssh`.
 
 ## Configuring Raspberry Pi from scratch
 
@@ -127,7 +127,7 @@ List:		screen -ls
 ```
 
 #### Using the REST API
-The Python code hosts a web server on the local network. Anyone connected to the VHS network (anyone physically at the space) can connect to http://isvhsopen-spacetime/ to open the space, close the space, or change the closing time. Network admins, please do not expose this web service to the public internet. If you cannot access the URL, try [spacetime_ip](http://api.hackspace.ca/s/vhs/data/spacetime_ip.txt) on the Hackspace API and confirm that you're on the same network. Also try on port 8080, as this is the default if one is not specified on startup.
+The Python code hosts a web server on the local network. Anyone connected to the VHS network (anyone physically at the space) can connect to http://isvhsopen-spacetime/ to open the space, close the space, or change the closing time. Network admins, please do not expose this web service to the public internet. If you cannot access the URL, try [spacetime_ip](http://api.vanhack.ca/s/vhs/data/spacetime_ip.txt) on the Hackspace API and confirm that you're on the same network. Also try on port 8080, as this is the default if one is not specified on startup.
 
 ### TODO List
 
