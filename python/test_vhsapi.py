@@ -18,7 +18,7 @@ class TestVHSApi(unittest.TestCase):
     self.assertFalse(v.Query('door'))
     
   def test_VHSApi_Query_ConnectionError(self):
-    v = VHSApi(dataURL = 'http://doesnotexist.hackspace.ca/')
+    v = VHSApi(dataURL = 'http://doesnotexist.vanhack.ca/')
     self.assertFalse(v.Query('door'))
     
   def test_VHSApi_Query_NoJSON(self):
@@ -26,7 +26,7 @@ class TestVHSApi(unittest.TestCase):
     self.assertFalse(v.Query('door'))
     
   def test_VHSApi_Query_BadUrl(self):
-    v = VHSApi(dataURL = 'http://api.hackspace.ca/')
+    v = VHSApi(dataURL = 'http://api.vanhack.ca/')
     self.assertFalse(v.Query('door'))
     
   #----Update----
@@ -41,7 +41,7 @@ class TestVHSApi(unittest.TestCase):
     self.assertFalse(v.Update('test1', 'v1'))
     
   def test_VHSApi_Update_ConnectionError(self):
-    v = VHSApi(dataURL = 'http://doesnotexist.hackspace.ca/')
+    v = VHSApi(dataURL = 'http://doesnotexist.vanhack.ca/')
     self.assertFalse(v.Update('test1', 'v1'))
     
   def test_VHSApi_Update_NoJSON(self):
@@ -49,7 +49,7 @@ class TestVHSApi(unittest.TestCase):
     self.assertFalse(v.Update('test1', 'v1'))
     
   def test_VHSApi_Update_BadUrl(self):
-    v = VHSApi(dataURL = 'http://api.hackspace.ca/')
+    v = VHSApi(dataURL = 'http://api.vanhack.ca/')
     self.assertFalse(v.Update('test1', 'v1'))
   
   
