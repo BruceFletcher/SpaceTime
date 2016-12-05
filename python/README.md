@@ -78,7 +78,7 @@ Refer to the [isvhsopen.com API on GitHub](https://github.com/vhs/isvhsopen) to 
 Please do not push changes to GitHub that include the API Key. This key should only be stored locally on the Raspberry Pi.
 
 #### Configure VHS API variables
-Find and edit the Hackspace API variable names used at the top of `main.py`. With the new isvhsopen.com API (independent of the Hackspace API), the only variable we still update directly on api.hackspace.ca is the one that stores the Raspberry Pi's local IP.
+Find and edit the Hackspace API variable names used at the top of `main.py`. With the new isvhsopen.com API (independent of the Hackspace API), the only variable we still update directly on api.vanhack.ca is the one that stores the Raspberry Pi's local IP.
 
 #### Set hostname for Raspberry Pi
 To configure the Raspberry Pi with hostname ```isvhsopen-spacetime```:
@@ -99,7 +99,7 @@ Commit the changes and reboot
 > sudo /etc/init.d/hostname.sh
 > sudo reboot
 ```
-Now you should be able to ssh into the Raspberry Pi using either its [local IP address](http://api.hackspace.ca/s/vhs/data/spacetime_ip.txt) or hostname (```isvhsopen-spacetime```).
+Now you should be able to ssh into the Raspberry Pi using either its [local IP address](http://api.vanhack.ca/s/vhs/data/spacetime_ip.txt) or hostname (```isvhsopen-spacetime```).
 
 #### Testing
 To run unit tests from command line:
