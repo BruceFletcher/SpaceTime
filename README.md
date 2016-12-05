@@ -10,7 +10,7 @@ displays.  The two rows are:
 * closing time (i.e. when the night's responsible keyholding member is planning to leave)
 
 The clock is AVR-based and communicates over a serial link with a Raspberry Pi, which performs 
-NTP time sync and updates variables on http://api.hackspace.com based on the clock's state.
+NTP time sync and updates variables on http://api.vanhack.com based on the clock's state.
 http://isvhsopen.com references the VHS API to display the open state and the closing time. 
 
 There is a separate readme for the [**Raspberry Pi setup instructions**](python/README.md) 
