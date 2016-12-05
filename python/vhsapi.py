@@ -2,7 +2,7 @@ import requests
 from time import sleep
 
 class VHSApi:
-  # The VHS API runs at http://api.hackspace.ca/
+  # The VHS API runs at http://api.vanhack.ca/
   # Source code is at   https://github.com/vhs/api/blob/master/lib/VHSAPI.pm
   # The online API supports a wide range of queries. (But this code does not)
   #  '<hostname>/s/<spacename>/data/<dataname>/update?value=<datavalue>'
@@ -15,7 +15,7 @@ class VHSApi:
   #  '<hostname>/s/<spacename>/data/history/<dataname>.json'
   api_update_str = '/update?value='
   
-  def __init__(self, dataURL = 'http://api.hackspace.ca/s/vhs/data/', timeout = 5):
+  def __init__(self, dataURL = 'http://api.vanhack.ca/s/vhs/data/', timeout = 5):
     self.baseURL = dataURL
     self.timeout = timeout
   

@@ -3,7 +3,7 @@ from time import sleep
 
 class WebApi:
   # The isvhsopen.com Web API is at http://isvhsopen.com/api/status/
-  # It is different from the VHS API at http://api.hackspace.ca/
+  # It is different from the VHS API at http://api.vanhack.ca/
   # Source code is at https://github.com/vhs/isvhsopen
   # An API Key must be obtained and added to this file to make updates possible.
   

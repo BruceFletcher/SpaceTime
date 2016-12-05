@@ -1,7 +1,7 @@
 import time
 import socket
 from spacetime import SpaceTime
-from vhsapi import VHSApi #api.hackspace.ca
+from vhsapi import VHSApi #api.vanhack.ca
 from webapi import WebApi #isvhsopen.com/api/status/
 from restserv import RestServ #Webserver for REST API to allow updates from the VHS network 
 from timeutil import *
